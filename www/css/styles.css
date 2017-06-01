@@ -1,0 +1,352 @@
+.list-block.more-list .item-inner {
+    justify-content: flex-start;
+    background-image: none;
+}
+
+.list-block.more-list .item-inner .label {
+    width: initial;
+}
+
+.list-block.more-list .item-inner .fa {
+    width: 30px;
+    text-align: center;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.login-screen-content {
+    background: linear-gradient(226deg, #662452, #90226f, #c23b9a, #e817aa, #1a5979, #257fad, #1a94d3, #3cade7, #3cade7);
+    background-size: 1800% 1800%;
+    -webkit-animation: AnimationName 30s ease infinite;
+    -moz-animation: AnimationName 30s ease infinite;
+    animation: AnimationName 30s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 0% 92%
+    }
+    50% {
+        background-position: 100% 9%
+    }
+    100% {
+        background-position: 0% 92%
+    }
+}
+
+@-moz-keyframes AnimationName {
+    0% {
+        background-position: 0% 92%
+    }
+    50% {
+        background-position: 100% 9%
+    }
+    100% {
+        background-position: 0% 92%
+    }
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 0% 92%
+    }
+    50% {
+        background-position: 100% 9%
+    }
+    100% {
+        background-position: 0% 92%
+    }
+}
+
+.login-screen .login-screen-title {
+    margin-top: 0 !important;
+}
+
+.login-screen form .list-block:not(:first-child) {
+    margin-top: 0 !important;
+}
+
+.login-screen form .list-block:first-child {
+    margin-bottom: 0 !important;
+}
+
+.login-screen form .list-block input {
+    background-color: rgba(233, 233, 233, 0.4);
+    padding-left: 20px;
+    color: #fff;
+}
+
+.login-screen form .list-block .button {
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 1);
+    color: #fff;
+}
+
+.login-screen form .list-block .item-link {
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+
+.login-screen .bottom-bar {
+    margin: 0;
+    color: #fff;
+    height: 48px;
+    background-color: rgba(255, 255, 255, 0.1);
+    line-height: 48px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.45);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.login-screen .bottom-bar ul {
+    display: inline-flex;
+}
+
+.login-screen .bottom-bar .list-button {
+    color: white;
+    font-weight: 600;
+    display: inline;
+}
+
+.toolbar .link {
+    display: flex;
+    flex-direction: column;
+    line-height: inherit !important;
+    color: rgba(8, 5, 5, 0.4) !important;
+}
+
+.toolbar .link.selected {
+    color: #fff !important;
+    pointer-events: none;
+}
+
+.toolbar-bottom-fixed .page-content {
+    padding-bottom: 48px;
+}
+
+.toolbar .fa {
+    font-size: large;
+    line-height: 23px;
+}
+
+.toolbar .toolbar-text {
+    font-size: smaller;
+    margin: 0 !important;
+}
+
+#btnFbLogin {
+    margin-top: 50px;
+}
+
+/*#btnFbLoginR {
+    margin-top: 20px;
+}*/
+
+#btnToForgetPw {
+    font-size: 14px;
+}
+
+#viewLoginPw {
+    position: absolute;
+    right: 16px;
+    top: 20px;
+    width: 30px;
+    color: black;
+}
+
+#viewPw {
+    position: absolute;
+    right: 16px;
+    top: 20px;
+    width: 30px;
+    color: black;
+}
+
+#viewCPw {
+    position: absolute;
+    right: 16px;
+    top: 20px;
+    width: 30px;
+    color: black;
+}
+
+#checkTitle {
+    right: 20px;
+    top: 5px;
+}
+
+#logo {
+    width: 150px;
+    height: 150px;
+}
+
+p {
+    color: black;
+}
+
+.popup-register .login-screen-title {
+    margin-top: 0 !important;
+}
+
+.popup-register form .list-block:not(:first-child) {
+    margin-top: 0 !important;
+}
+
+.popup-register form .list-block:first-child {
+    margin-bottom: 0 !important;
+}
+
+.popup-register form .list-block input {
+    background-color: rgba(233, 233, 233, 0.4);
+    padding-left: 20px;
+    color: #fff;
+}
+
+.popup-register form .list-block .button {
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 1);
+    color: #fff;
+}
+
+.popup-register form .list-block .item-link {
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+
+.popup-register .bottom-bar {
+    margin: 0;
+    color: #fff;
+    height: 48px;
+    background-color: rgba(255, 255, 255, 0.1);
+    line-height: 48px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.45);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.popup-register .bottom-bar ul {
+    display: inline-flex;
+}
+
+.popup-register .bottom-bar .list-button {
+    color: white;
+    font-weight: 600;
+    display: inline;
+}
+
+#right {
+    margin-right: 15px;
+}
+
+#search {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#title {
+    font-weight: bold;
+}
+
+.popup-voucher-detail .content-block img {
+    width: 100%;
+}
+
+#eHp {
+    position: absolute;
+    top: 25px;
+    left: 35px;
+}
+
+#vtitle {
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+#vdescription {
+    font-size: 18px;
+    color: red;
+}
+
+#vCondition {
+    font-size: 15px;
+    padding-bottom: 10px;
+}
+
+#vGallery {
+    font-size: 15px;
+    padding-bottom: 10px;
+}
+
+.description {
+    font-size: 18px;
+    color: red;
+    padding-bottom: 15px;
+}
+
+.detail {
+    padding-bottom: 15px;
+}
+
+.condition {
+    padding-bottom: 15px;
+}
+
+.gallery {
+    padding-bottom: 15px;
+}
+
+#btnPay {
+    color: white;
+    background-color: #03a9f4;
+}
+
+#popover-notification {
+    padding-left: 10px;
+}
+
+.list-block.inputs-list .label {
+    font-size: 15px;
+}
+
+#day {
+    position: absolute;
+    color: red;
+    right: 0px;
+    bottom: -65px;
+    font-size: large;
+}
+
+#share {
+    color: black;
+    position: absolute;
+    left: 325px;
+    top: 255px;
+    font-size: large;
+}
+
+#cate .col-50 .cate-image:hover{
+  position:relative;
+  /*box-shadow:7px 10px 25px -9px rgba(0, 0, 0 0.84);*/
+  transform: scale(1.2,1.2);
+  transform-origin:center;
+  /*width:50%;*/
+}
+
+/*i.fa.fa-heart:hover {
+    color: red;
+}*/
+
+
+
+#test{
+  position: absolute;
+  right: 45px;
+  top: 255px;
+}

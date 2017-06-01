@@ -1,0 +1,462 @@
+.news-edit{
+  margin-left: 95%;
+}
+
+.talks-card .card-content-inner {
+    padding: 15px 10px;
+}
+
+.talks-card .news-name {
+    margin-left: 44px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.talks-card .card-footer a {
+    color: #81848b;
+    font-weight: 500;
+}
+
+.talks-card .card-content-inner .fa-heart-o, .talks-card .card-content-inner .fa-heart {
+    padding-right: 10px;
+}
+
+.talks-card .card-content-inner .fa {
+padding-left: 5px;
+color: #e91e63;
+}
+
+#foodTitle {
+    font-weight: bold;
+}
+
+#ingredient {
+    font-weight: bold;
+}
+
+#method {
+    font-weight: bold;
+}
+
+#rDescription {
+    font-weight: bold;
+}
+
+#rIngredient {
+    font-weight: bold;
+}
+
+#rMethod {
+    font-weight: bold;
+}
+
+#recipeName {
+    font-size: 17px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+/*.statusbar-overlay {
+    background: #ffbc46;
+    color: #fff;
+}*/
+
+option[value=""][disabled] {
+    display: none;
+}
+
+option {
+    color: black;
+}
+
+select:required:invalid {
+    color: gray;
+}
+
+#buttonRegistration {
+    margin-top: 50px;
+}
+
+#buttonPassword {
+    margin-top: 50px;
+}
+
+#buttonProfile {
+    margin-top: 50px;
+}
+
+.toolbar-bottom-fixed .page-content {
+    padding-bottom: 48px;
+}
+
+.login-screen .logo {
+    width: 50%;
+    margin-top: 10%;
+}
+
+.login-screen .login-screen-title {
+    margin-top: 0 !important;
+}
+
+.login-screen form .list-block:not(:first-child) {
+    margin-top: 0 !important;
+}
+
+.login-screen form .list-block:first-child {
+    margin-bottom: 0 !important;
+}
+
+.login-screen form .list-block input {
+    height: 48px;
+}
+
+.button {
+    border-radius: 0 !important;
+    margin-top: 10px;
+}
+
+.login-screen form .list-block .button {
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 1);
+    text-transform: capitalize;
+}
+
+.login-screen form .list-block .item-inner:after {
+    height: 0;
+}
+
+.login-screen form .list-block .item-link {
+    text-transform: capitalize;
+    text-align: center;
+    width: 100%;
+}
+
+.login-screen .bottom-bar {
+    margin: 0;
+    height: 100px;
+    line-height: 48px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+}
+
+.row.password-input i.fa-eye {
+    position: absolute;
+    line-height: 85px;
+    right: 16px;
+    width: 30px;
+    text-align: center;
+    color: black;
+}
+
+.login-screen .bottom-bar ul {
+    display: inline-flex;
+}
+
+.login-screen .bottom-bar .list-button {
+    color: #fff;
+    font-weight: 600;
+    display: inline;
+    text-transform: capitalize;
+}
+
+.toolbar .link {
+    display: flex;
+    flex-direction: column;
+    line-height: inherit !important;
+    width: 25%;
+}
+
+.toolbar .link.selected {
+    margin-bottom: -8px;
+    border-bottom: 8px solid #fff;
+}
+
+.news-card .card-header {
+    display: block;
+    padding: 10px;
+}
+
+.news-card .news-avatar {
+    float: left;
+}
+
+.news-card .news-name {
+    margin-left: 44px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.news-card .news-date {
+    margin-left: 44px;
+    font-size: 13px;
+    color: #8e8e93;
+}
+
+.news-card .card-footer {
+    background: #fafafa;
+}
+
+.news-card .card-footer a {
+    color: #81848b;
+    font-weight: 500;
+}
+
+.news-card .card-content img {
+    display: block;
+}
+
+.news-card .card-content-inner {
+    padding: 15px 10px;
+}
+
+.news-card .card-content-inner .fa {
+    padding-left: 5px;
+    color: #e91e63;
+}
+
+.news-card .card-footer {
+    padding: 0;
+    min-height: inherit;
+}
+
+.news-card .card-content-inner .fa-heart-o, .news-card .card-content-inner .fa-heart {
+    padding-right: 10px;
+}
+
+.talks-card {
+    border-radius: 0;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 3px -2px darkgrey;
+}
+
+.talks-card .card-content-inner p {
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.talks-card .card-footer {
+    padding: 0;
+    align-items: flex-start;
+    min-height: initial;
+}
+
+.talks-card .card-footer:before {
+    height: 0;
+}
+
+.talks-card .card-footer p {
+    margin: 0;
+    margin-bottom: 3px;
+    font-size: large
+}
+
+.talks-card .card-footer .row {
+    width: 100%;
+}
+
+.talks-card .card-footer .row div:last-child {
+    text-align: end;
+}
+
+.list-block.my-history-list .item-after, .list-block.my-history-list .item-after .fa-star {
+    line-height: 24px;
+    margin-left: 3px;
+    color: #e91e63;
+}
+
+.list-block.my-history-list .item-text {
+    -webkit-line-clamp: 3;
+    max-height: inherit;
+    margin-top: 5px;
+}
+
+.list-block.my-history-list .item-text .fa {
+    margin-right: 5px;
+}
+
+.list-block.my-history-list .item-text .fa-thumbs-up {
+    color: #8BC34A;
+}
+
+.list-block.my-history-list .item-text .fa-thumbs-down {
+    color: #F44336;
+}
+
+.user-profile img {
+    margin-top: 10px;
+    border-radius: 50%;
+    width: 165px;
+}
+
+.user-profile .fa-star {
+    margin: 0 15px 0 5px;
+    color: #e91e63
+}
+
+.user-profile .fa-edit {
+    color: #e91e63;
+    position: absolute;
+    font-size: 20px;
+    top: 220px;
+    left: 65%;
+}
+
+.list-block.more-list .item-inner {
+    justify-content: flex-start;
+    background-image: none;
+}
+
+.list-block.more-list .item-inner .label {
+    width: initial;
+}
+
+.list-block.more-list .item-inner .fa {
+    width: 30px;
+    text-align: center;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.about-page .logo {
+    width: 70%;
+}
+
+.about-page h1.name {
+    text-align: center;
+    margin-top: 0;
+    font-weight: normal;
+    color: #e91e63;
+}
+
+.popover-comment {
+    overflow: scroll;
+    max-height: 70%;
+    width: calc(100% - 16px);
+}
+
+.popover-comment li {
+    padding: 5px;
+}
+
+.popover-comment li:not(:first-child) {
+    border-bottom: 1px solid rgba(200, 200, 200, 0.5);
+}
+
+.popover-comment li textarea {
+    resize: vertical;
+    height: auto;
+    padding: 3px;
+    border: 1px solid rgba(200, 200, 200, 0.5);
+}
+
+.btn-submit-topic .fa {
+    margin-right: 8px;
+}
+
+.card.talk-page .card-header .title {
+    margin: 0;
+}
+
+.card.talk-page .card-content-inner {
+    padding: 0 16px;
+}
+
+.card.talk-page .card-footer {
+    padding: 0;
+}
+
+.card.talk-page .card-footer .list-block {
+    width: 100%;
+}
+
+.card.talk-page .card-footer .list-block .label {
+    width: 90%;
+}
+
+.card.talk-page .card-footer .list-block .item-comment {
+    padding: 0 16px 8px;
+    text-align: justify;
+}
+
+.card.talk-page .card-footer .list-block .item-subtitle {
+    color: #FFC107;
+}
+
+.card.talk-page .card-footer .list-block .item-subtitle .fa {
+    padding-left: 4px;
+}
+
+.card.talk-page .card-footer .list-block .item-content .item-media, .card.talk-page .card-footer .list-block .item-content .item-inner {
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+.card.talk-page .card-footer .list-block textarea {
+    padding: 3px;
+}
+
+.card.talk-page .card-footer .list-block .item-inner.flex {
+    display: flex;
+}
+
+.rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+}
+
+.rating input {
+    position: absolute;
+    left: -999999px;
+}
+
+.rating label {
+    display: inline-block;
+    font-size: 0;
+}
+
+.rating>label:before {
+    position: relative;
+    font: 34px/1 FontAwesome;
+    display: block;
+    content: "\f005";
+    color: #ccc;
+    background: -webkit-linear-gradient(-45deg, #d9d9d9 0%, #b3b3b3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.rating>label:hover:before, .rating>label:hover~label:before, .rating>label.selected:before, .rating>label.selected~label:before {
+    color: #f0ad4e;
+    background: -webkit-linear-gradient(-45deg, #FFEB3B 0%, #FFC107 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-get-schedule .fa {
+    margin-right: 8px;
+}
+
+.schedule-list .item-inner {
+    display: block;
+}
+
+.schedule-list .fa-times-circle {
+    color: #e91e63;
+}
+
+.schedule-list .fa-check-circle {
+    color: #ad3;
+}
+
+.popover-update-profile {
+    width: 90%;
+}
+
+object embed {
+    width: 100%;
+}

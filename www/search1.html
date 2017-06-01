@@ -1,0 +1,47 @@
+<div data-page="search" class="page navbar-fixed">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a href="#" class="back link">
+                    <i class="fa fa-arrow-left"></i>
+                    <span>back</span>
+                </a>
+            </div>
+            <form data-search-list=".list-block-search" data-search-in=".item-title" class="searchbar searchbar-init">
+                <div class="searchbar-input">
+                    <input type="search" placeholder="Search">
+                    <a href="#" class="searchbar-clear"></a>
+                </div><a href="#" class="searchbar-cancel">Cancel</a>
+            </form>
+        </div>
+        <div class="toolbar tabbar tabbar-scrollable">
+            <div class="toolbar-inner">
+                <a href="#tab1" class="tab-link active">Category</a>
+                <a href="#tab2" class="tab-link">Filter</a>
+            </div>
+        </div>
+    </div>
+    <div class="page-content tabs">
+        <!-- Search Bar overlay -->
+        <div class="searchbar-overlay"></div>
+        <!-- This block will be displayed if nothing found -->
+        <div class="content-block searchbar-not-found">
+            <div class="content-block-inner"></div>
+        </div>
+
+        <div class="list-block list-block-search searchbar-found">
+          <div id="tab1" class="tab active">
+            <div class="category" style="padding-top: 20px;">
+                <ul>
+
+                </ul>
+            </div>
+          </div>
+          <div id="tab2" class="tab active">
+            <div class="news-page" style="padding-top: 50px;">
+
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

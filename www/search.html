@@ -1,0 +1,88 @@
+<div data-page="search" class="page toolbar-bottom-fixed navbar-fixed">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a href="#" class="back link">
+                    <i class="fa fa-arrow-left"></i>
+                    <span>back</span>
+                </a>
+            </div>
+            <form data-search-list=".list-block-search" data-search-in=".item-title" class="searchbar searchbar-init">
+                <div class="searchbar-input">
+                    <input type="search" placeholder="Search">
+                    <a href="#" class="searchbar-clear"></a>
+                </div><a href="#" class="searchbar-cancel">Cancel</a>
+            </form>
+        </div>
+        <div class="toolbar tabbar tabbar-scrollable">
+            <div class="toolbar-inner">
+                <a href="#tab-1" class="tab-link active">Category</a>
+                <a href="#tab-2" class="tab-link">Filter</a>
+            </div>
+        </div>
+    </div>
+    <div class="page-content tabs">
+        <!-- Search Bar overlay -->
+        <div class="searchbar-overlay"></div>
+        <!-- This block will be displayed if nothing found -->
+        <div class="content-block searchbar-not-found">
+            <div class="content-block-inner">No result</div>
+        </div>
+
+        <div id="tab-1" class="tab active">
+            <div class="list-block list-block-search searchbar-found">
+                <div class="content-block category" style="padding-top: 20px; margin-left: -20px;">
+                    <ul>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-2" class="tab">
+            <div class="page-content">
+                <div class="list-block" style="margin-top: -5px;">
+                    <ul>
+                        <li class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">Name </div>
+                                <div class="item-input">
+                                    <input type="text" name="itemName" id="" placeholder="Item name" />
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">Price from </div>
+                                    <div class="item-input">
+                                        <div class="range-slider">
+                                            <input type="range" name="rangeFrom" min="0" value="0" step="0.1">
+                                            <input type="text" name="rangeFromTxt" value="0" . </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">Price to </div>
+                                    <div class="item-input">
+                                        <div class="range-slider">
+                                            <input type="range" name="rangeTo" min="0" value="100" step="0.1">
+                                            <input type="text" name="rangeToTxt" value="100" .</div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </li>
+                        <li class="row" style="justify-content: space-around;margin-top: 10px;">
+                            <div class="col-50">
+                                <a href="" class="button button-fill" id="btnPassSubmit">search</a>
+                            </div>
+                        </li>
+                    </ul>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
