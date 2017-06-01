@@ -549,7 +549,7 @@ $$('.home-toolbar a').on('click', function(e, i) {
 
 function paymentAction() {
   $$('#buyNowBtn').on('click', function() {
-      PayPalMobile.renderSinglePaymentUI(gap.createPayment(), gap.onSuccesfulPayment, gap.onUserCanceled);
+    PayPalMobile.renderSinglePaymentUI(gap.createPayment(), gap.onSuccesfulPayment, gap.onUserCanceled);
     // PayPalMobile.renderSinglePaymentUI(gap.createPayment("50.00", "0.00", "0.00", "50.00", "Test"), gap.onSuccesfulPayment, gap.onUserCanceled);
   });
 
@@ -624,14 +624,15 @@ function paymentAction() {
     'mp_advanced_phone_validation_enabled': false
   };
 
-  $$('#btnPayment').on('click', function() {
-    window.molpay.startMolpay(paymentDetails, molpayCallback);
-  });
-}
+  var molpayCallback = function(transactionResult) {
+    console.log('molpayCallback transactionResult = ' + transactionResult);
+    alert('molpayCallback transactionResult = ' + transactionResult);
+  };
 
-var molpayCallback = function(transactionResult) {
-  console.log(transactionResult);
-};
+  window.molpay.startMolpay(paymentDetails, molpayCallback);
+  // window.molpay.transactionRequest(paymentDetails, molpayCallback);
+  // window.molpay.closeMolpay();
+}
 
 function homeAction() {
   $$('.home-toolbar .link[href="userHome.html"]').addClass('selected');
