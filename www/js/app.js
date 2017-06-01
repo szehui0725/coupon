@@ -132,30 +132,7 @@ var gap = {
     var payment = new PayPalPayment("50.00", "USD", "Awesome Sauce", "Sale", paymentDetails);
     return payment;
   },
-  onPrepareRender: function() {
-    // buttons defined in index.html
-    //  <button id="buyNowBtn"> Buy Now !</button>
-    //  <button id="buyInFutureBtn"> Pay in Future !</button>
-    //  <button id="profileSharingBtn"> ProfileSharing !</button>
-    var buyNowBtn = document.getElementById("buyNowBtn");
-    var buyInFutureBtn = document.getElementById("buyInFutureBtn");
-    var profileSharingBtn = document.getElementById("profileSharingBtn");
-
-    buyNowBtn.onclick = function(e) {
-      // single payment
-      PayPalMobile.renderSinglePaymentUI(gap.createPayment(), gap.onSuccesfulPayment, gap.onUserCanceled);
-    };
-
-    buyInFutureBtn.onclick = function(e) {
-      // future payment
-      PayPalMobile.renderFuturePaymentUI(gap.onAuthorizationCallback, gap.onUserCanceled);
-    };
-
-    profileSharingBtn.onclick = function(e) {
-      // profile sharing
-      PayPalMobile.renderProfileSharingUI(["profile", "email", "phone", "address", "futurepayments", "paypalattributes"], gap.onAuthorizationCallback, gap.onUserCanceled);
-    };
-  },
+  onPrepareRender: function() {},
   onUserCanceled: function(result) {
     console.log(result);
   }
