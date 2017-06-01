@@ -629,9 +629,12 @@ function paymentAction() {
     alert('molpayCallback transactionResult = ' + transactionResult);
   };
 
-  window.molpay.startMolpay(paymentDetails, molpayCallback);
-  // window.molpay.transactionRequest(paymentDetails, molpayCallback);
-  // window.molpay.closeMolpay();
+  $$('#btnPayment').on('click', function() {
+    window.molpay.startMolpay(paymentDetails, molpayCallback);
+    // window.molpay.transactionRequest(paymentDetails, molpayCallback);
+    // window.molpay.closeMolpay();
+  });
+
 }
 
 function homeAction() {
