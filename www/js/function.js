@@ -629,7 +629,7 @@ function paymentAction() {
     alert('molpayCallback transactionResult = ' + transactionResult);
   };
 
-  $$('#btnPayment').on('click', function() {
+  $$('#molpay').on('click', function() {
     window.molpay.startMolpay(paymentDetails, molpayCallback);
     // window.molpay.transactionRequest(paymentDetails, molpayCallback);
     // window.molpay.closeMolpay();
