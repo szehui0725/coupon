@@ -90,10 +90,10 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
-    <plugin name="cordova-plugin-facebook4" spec="~1.8.0">
+    <plugin name="cordova-plugin-facebook4">
         <variable name="APP_ID" value="315064148931121" />
         <variable name="APP_NAME" value="coupons" />
     </plugin>
-    <plugin name="molpay-mobile-xdk-cordova" spec="~3.12.0" />
-    <plugin name="com.paypal.cordova.mobilesdk" spec="~3.5.0" />
+    <plugin name="molpay-mobile-xdk-cordova" />
+    <plugin name="com.paypal.cordova.mobilesdk"/>
 </widget>
