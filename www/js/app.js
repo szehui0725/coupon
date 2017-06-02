@@ -106,11 +106,11 @@ var gap = {
     };
 
     var btnPayment = document.getElementById("btnPayment");
-    btnPayment.onclick = function(e) {
-      window.molpay.startMolpay(paymentDetails, molpayCallback);
-      window.molpay.transactionRequest(paymentDetails, molpayCallback);
-      window.molpay.closeMolpay();
-    };
+    // btnPayment.onclick = function(e) {
+    //   window.molpay.startMolpay(paymentDetails, molpayCallback);
+    //   window.molpay.transactionRequest(paymentDetails, molpayCallback);
+    //   window.molpay.closeMolpay();
+    // };
   },
   onBackKeyDown: function() {
     mainView.router.back();
