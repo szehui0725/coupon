@@ -1,16 +1,3 @@
-// Initialize app
-
-// if (localStorage.lang === undefined || localStorage.lang === 'undefined') {
-//     localStorage.lang = "en";
-// }
-
-// var apiKey = "Js-k1aq^ChxN";
-// var apiUrl = "http://member.dmallclub.com/api/";
-// var jomMain = "http://jom.vvpserver.com";
-// var jomApi = "http://jomapi.vvpserver.com";
-
-// var colorArr = ["red", "pink", "purple", "deeppurple", "indigo", "lightblue", "blue", "cyan", "teal", "green", "lightgreen", "lime", "yellow", "amber", "orange", "deeporange", "brown", "bluegray"];
-
 var app = new Framework7({
   modalTitle: "Coupon",
   modalButtonOk: "OK",
@@ -25,19 +12,7 @@ var app = new Framework7({
   sortable: false,
   swipeBackPage: false,
   swipeout: true,
-  //swipePanel: true,
-  //swipePanelOnlyClose: true
-  /*, //list swipe
-      imagesLazyLoadPlaceholder: '',
-      tapHold: true,*/
-  // onAjaxStart: function(xhr) {
-  //     app.showIndicator();
-  // },
-  // onAjaxComplete: function(xhr) {
-  //     app.hideIndicator();
-  // }
 });
-
 
 // If we need to use custom DOM library, let's save it to $$ variable:
 var $$ = Dom7;
@@ -62,35 +37,6 @@ var gap = {
   receivedEvent: function(id) {
     console.log('Received Event: ' + id);
 
-    /*var push = PushNotification.init({
-        android: {
-            senderID: senderID,
-            clearBadge: true
-        },
-        ios: {
-            alert: "true",
-            badge: true,
-            sound: 'true',
-            clearBadge: true
-        }
-    });
-
-    push.on('registration', function(data) {
-        //device.platform  iOS Android
-        //console.log(data.registrationId);
-        pushId = data.registrationId;
-    });
-
-    push.on('notification', function(data) {
-        console.log(data.message);
-        console.log(data.title);
-        console.log(data.count);
-        console.log(data.sound);
-        console.log(data.image);
-        console.log(data.additionalData);
-    });
-
-    appInit();*/
     isLoggedIn();
     gap.initPaymentUI();
     //gap.initCardIO();
@@ -162,8 +108,8 @@ var gap = {
     var btnPayment = document.getElementById("btnPayment");
     btnPayment.onclick = function(e) {
       window.molpay.startMolpay(paymentDetails, molpayCallback);
-      // window.molpay.transactionRequest(paymentDetails, molpayCallback);
-      // window.molpay.closeMolpay();
+      window.molpay.transactionRequest(paymentDetails, molpayCallback);
+      window.molpay.closeMolpay();
     };
   },
   onBackKeyDown: function() {
@@ -261,8 +207,3 @@ function initDatePicker(input, date) {
   picker.open();
   picker.close();
 }
-
-// function makeToast(str, icon) {
-//     var toast = app.toast(str, icon, {});
-//     toast.show(true);
-// }
