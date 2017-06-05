@@ -629,7 +629,7 @@ function paymentAction() {
 function shareAction(){
   $$('#fbShare').on('click', function() {
     window.plugins.socialsharing.shareViaFacebook('Message via Facebook',
-      null /* img */ ,
+      'https://www.google.nl/images/srpr/logo4w.png' /* img */ ,
       null /* url */ ,
       null,
       function(errormsg) {
@@ -661,7 +661,7 @@ function shareAction(){
   });
 
   $$('#otherShare').on('click', function() {
-    window.plugins.socialsharing.share('General share Message', null, null, null);
+    window.plugins.socialsharing.share('General share Message', null, "https://github.com/szehui0725/coupon", null);
   });
 }
 
