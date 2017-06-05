@@ -659,7 +659,7 @@ function paymentAction() {
   null,
   function(errormsg) {alert("Error: Cannot share")}
   );
-};
+});
 
   $$('#otherShare').on('click', function() {
       window.plugins.socialsharing.share('General share Message', null, null, null);
