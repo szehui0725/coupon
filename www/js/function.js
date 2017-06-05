@@ -661,7 +661,7 @@ function shareAction(){
   });
 
   $$('#otherShare').on('click', function() {
-    window.plugins.socialsharing.share('General share Message', null, "https://github.com/szehui0725/coupon", null);
+    window.plugins.socialsharing.share('General share Message', null, null, null);
   });
 }
 
