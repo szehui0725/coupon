@@ -630,7 +630,7 @@ function shareAction(){
   $$('#fbShare').on('click', function() {
     window.plugins.socialsharing.shareViaFacebook('Message via Facebook',
       'https://www.google.nl/images/srpr/logo4w.png' /* img */ ,
-      null /* url */ ,
+      'http://twitter.com/',
       null,
       function(errormsg) {
         alert("Error: Cannot Share")
