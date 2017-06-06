@@ -542,7 +542,7 @@ $$('.home-toolbar a').on('click', function(e, i) {
 
 function qrcodeAction() {
   $$('#qrCode').on('click', function() {
-    cordova.plugins.barcodeScanner.scan(
+    window.plugins.barcodeScanner.scan(
          function (result) {
              alert("We got a barcode\n" +
                    "Result: " + result.text + "\n" +
