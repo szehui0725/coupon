@@ -28,6 +28,9 @@ $$(document).on('pageInit', function(e) {
     case 'share':
       shareAction();
       break;
+    case 'qrcode':
+      qrcodeAction();
+      break;
     case 'more':
       moreAction();
       break;
@@ -537,6 +540,42 @@ $$('.home-toolbar a').on('click', function(e, i) {
   $$(this).addClass('selected');
 });
 
+function qrcodeAction() {
+  $$('#qrCode').on('click', function() {
+    cordova.plugins.barcodeScanner.scan(
+      function(result) {
+        alert("A barcode has been scanned \n" +
+          "Result: " + result.text + "\n" +
+          "Format: " + result.format + "\n" +
+          "Cancelled: " + result.cancelled);
+      },
+      function(error) {
+        alert("Scanning failed: " + error);
+      }
+    );
+  });
+}
+
+// cordova.plugins.barcodeScanner.scan(
+//    function (result) {
+//         if(!result.cancelled){
+//                // In this case we only want to process QR Codes
+//                if(result.format == "QR_CODE"){
+//                     var value = result.text;
+//                     // This is the retrieved content of the qr code
+//                     console.log(value);
+//                }else{
+//                   alert("Sorry, only qr codes this time ;)");
+//                }
+//         }else{
+//           alert("The user has dismissed the scan");
+//         }
+//      },
+//      function (error) {
+//           alert("An error ocurred: " + error);
+//      }
+// );
+
 function paymentAction() {
   $$('#buyNowBtn').on('click', function() {
     PayPalMobile.renderSinglePaymentUI(gap.createPayment(), gap.onSuccesfulPayment, gap.onUserCanceled);
@@ -626,7 +665,7 @@ function paymentAction() {
   });
 }
 
-function shareAction(){
+function shareAction() {
   $$('#fbShare').on('click', function() {
     window.plugins.socialsharing.shareViaFacebook('Message via Facebook',
       'https://www.google.nl/images/srpr/logo4w.png' /* img */ ,
