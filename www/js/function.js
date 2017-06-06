@@ -582,6 +582,12 @@ function qrcodeAction() {
       },
       function(error) {
         alert("An error ocurred: " + error);
+      }, {
+        "preferFrontCamera": false, // iOS and Android
+        "showFlipCameraButton": true, // iOS and Android
+        "prompt": "Place parallel to the code", // supported on Android only
+        "formats": "all,RSS_EXPANDED,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
+        "orientation": "portrait" // Android only (portrait|landscape), default unset so it rotates with the device
       }
     );
   });
