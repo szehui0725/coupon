@@ -29,9 +29,7 @@
   <plugin name="cordova-plugin-camera"/>
   <plugin name="cordova-plugin-inappbrowser" source="npm"/>
   <plugin name="cordova-plugin-x-socialsharing" source="npm"/>
-  <!-- <plugin spec="https://github.com/phonegap/phonegap-plugin-barcodescanner.git" source="git">
-    <variable name="CAMERA_USAGE_DESCRIPTION" value="Scan QRcode to make payment"/>
-  </plugin> -->
+  <plugin name="cordova-plugin-barcodescanner" source="npm" />
   <platform name="android">
     <icon platform="android" qualifier="ldpi" src="ldpi.png"/>
     <icon platform="android" qualifier="mdpi" src="mdpi.png"/>
