@@ -543,224 +543,26 @@ $$('.home-toolbar a').on('click', function(e, i) {
   $$(this).addClass('selected');
 });
 
-function chartAction() {
-  const CHART = document.getElementById("lineChart");
-  // Chart.defaults.global.animation.duration = 200;
-  // Chart.defaults.global.animation.onComplete = () => {
-  //   console.log('finished');
-  // }
-  var lineChart = new Chart(CHART, {
-    type: 'line',
-    data: {
-      labels: ["January", "February", "March", "April", "May", "June", "July"],
-      datasets: [{
-        label: "My First dataset",
-        fill: false,
-        lineTension: 0.1,
-        // backgroundColor: 'rgb(255, 99, 132)',
-        borderColor: 'rgb(255, 99, 132)',
-        borderCapStyle: 'butt',
-        borderDash: [],
-        borderDashOffset: 0.0,
-        borderJoinStyle: 'miter',
-        pointBorderColor: 'rgb(255, 99, 132)',
-        pointBackgroundColor: "#fff",
-        pointBorderWidth: 1,
-        pointHoverRadius: 5,
-        pointHoverBackgroundColor: 'rgb(255, 99, 132)',
-        pointHoverBorderColor: 'rgb(255, 99, 132)',
-        pointHoverBorderWidth: 2,
-        pointRadius: 1,
-        pointHitRadius: 5,
-        data: [50, 10, 5, 2, 20, 30, 45],
-      }, {
-        label: "My second dataset",
-        fill: true,
-        lineTension: 0,
-        backgroundColor: 'rgb(255, 130, 236)',
-        borderColor: 'rgb(255, 130, 236)',
-        borderCapStyle: 'butt',
-        borderDash: [],
-        borderDashOffset: 0.0,
-        borderJoinStyle: 'miter',
-        pointBorderColor: 'rgb(255, 130, 236)',
-        pointBackgroundColor: "#fff",
-        pointBorderWidth: 1,
-        pointHoverRadius: 5,
-        pointHoverBackgroundColor: 'rgb(255, 99, 132)',
-        pointHoverBorderColor: 'rgb(255, 99, 132)',
-        pointHoverBorderWidth: 2,
-        pointRadius: 1,
-        pointHitRadius: 5,
-        data: [10, 50, 5, 10, 50, 30, 50],
-      }]
-    },
-    options: {
-      // showLines: false,
-      scales: {
-        yAxes: [{
-          ticks: {
-            // reverse:false,
-            beginAtZero: true
-          }
-        }]
-      }
-    }
-  });
-
-  $$('#addPoint').on('click', function() {
-    lineChart.data.labels.push("label");
-    // myLineChart.data.datasets[0].data[2] = 50; // Would update the first dataset's value of 'March' to be 50
-    lineChart.data.datasets.forEach((dataset) => {
-      dataset.data.push(20);
-    });
-    lineChart.update();
-  });
-
-  $$('#removePoint').on('click', function() {
-    lineChart.data.labels.pop();
-    lineChart.data.datasets.forEach((dataset) => {
-      dataset.data.pop();
-    });
-    lineChart.update();
-  });
-  // $$('#addPoint').on('click', function() {
-  //     lineChart.data.datasets[0].data[7]= 0;
-  //     lineChart.data.labels[7]= "edited";
-  //     lineChart.update();
-  // });
-
-  const BAR = document.getElementById("barChart");
-  Chart.defaults.scale.ticks.beginAtZero = true;
-
-  let barChart = new Chart(BAR, {
-    type: 'bar',
-    data: {
-      labels: ["Jan", "Feb", "Mar", "Apr", "May"],
-      datasets: [{
-        label: 'Numbers per month',
-        borderColor: '#00FF00',
-        borderWidth: 2,
-        backgroundColor: '#00FF00',
-        data: [10, 20, 30, 40, 50]
-      }]
-    }
-  });
-
-  const RADAR = document.getElementById("radar");
-  Chart.defaults.scale.ticks.beginAtZero = true;
-
-  let radar = new Chart(RADAR, {
-    type: 'radar',
-    data: {
-      labels: ["Strength", "Skill", "Health", "Speed", "Luck"],
-      datasets: [{
-        label: 'Points',
-        borderColor: '#00FF00',
-        borderWidth: 2,
-        backgroundColor: 'rgba(00, 255, 00, 0.1)',
-        data: [10, 20, 30, 40, 50]
-      }, {
-        label: 'Points',
-        borderColor: '#00FFFF',
-        borderWidth: 2,
-        backgroundColor: 'rgba(0, 255, 255, 0.1)',
-        data: [100, 60, 30, 80, 50]
-      }]
-    }
-  });
-
-  const POLAR = document.getElementById("polar");
-  Chart.defaults.scale.ticks.beginAtZero = true;
-
-  let polar = new Chart(POLAR, {
-    type: 'polarArea',
-    data: {
-      labels: ["Strength", "Skill", "Health", "Speed", "Luck"],
-      datasets: [{
-        label: 'Points',
-        backgroundColor: ['#f1c40f', '#e67e22', '#16a085', '#2980b9', '#8e44ad'],
-        data: [10, 20, 30, 40, 50]
-      }]
-    },
-    options: {
-      animation: {
-        // animateRotate: false
-        animateScale: false
-      }
-    }
-  });
-
-  const PIE = document.getElementById("pie");
-  Chart.defaults.scale.ticks.beginAtZero = true;
-
-  let pie = new Chart(PIE, {
-    type: 'pie',
-    data: {
-      labels: ["Strength", "Skill", "Health", "Speed", "Luck"],
-      datasets: [{
-        label: 'Points',
-        backgroundColor: ['#f1c40f', '#e67e22', '#16a085', '#2980b9', '#8e44ad'],
-        data: [10, 20, 30, 40, 50]
-      }]
-    },
-    options: {
-      animation: {
-        // animateRotate: false
-        animateScale: true
-      }
-    }
-  });
-
-  const DOUGHNUT = document.getElementById("doughnut");
-  Chart.defaults.scale.ticks.beginAtZero = true;
-
-  let doughnut = new Chart(DOUGHNUT, {
-    type: 'doughnut',
-    data: {
-      labels: ["Strength", "Skill", "Health", "Speed", "Luck"],
-      datasets: [{
-        label: 'Points',
-        backgroundColor: ['#f1c40f', '#e67e22', '#16a085', '#2980b9', '#8e44ad'],
-        data: [10, 20, 30, 40, 50]
-      }]
-    },
-    options: {
-      cutoutPercentage: 20,
-      rotation: Math.PI * 0.5,
-      // rotation: 90,
-      animation: {
-        // animateRotate: false
-        animateScale: true
-      }
-    }
-  });
-
-  const LOGIC = document.getElementById("logic");
-  Chart.defaults.scale.ticks.beginAtZero = true;
-
-  let logic = new Chart(LOGIC, {
-    type: 'line',
-    data: {
-      labels: ["Strength", "Skill", "Health", "Speed", "Luck"],
-      datasets: [{
-        label: 'Points',
-        borderColor: '#2980b9',
-        data: [10, 20, 55, 30, 10]
-      }]
-    },
-    options: {
-      scales: {
-        yAxes: [{
-          type: 'logarithmic',
-          ticks: {
-            min: 1,
-            max: 60
-          }
-        }]
-      }
-    }
-  });
+function chartAction(){
+//   var ctx = document.getElementById('myChart').getContext('2d');
+// var chart = new Chart(ctx, {
+//     // The type of chart we want to create
+//     type: 'line',
+//
+//     // The data for our dataset
+//     data: {
+//         labels: ["January", "February", "March", "April", "May", "June", "July"],
+//         datasets: [{
+//             label: "My First dataset",
+//             backgroundColor: 'rgb(255, 99, 132)',
+//             borderColor: 'rgb(255, 99, 132)',
+//             data: [0, 10, 5, 2, 20, 30, 45],
+//         }]
+//     },
+//
+//     // Configuration options go here
+//     options: {}
+// });
 }
 
 function qrcodeAction() {
