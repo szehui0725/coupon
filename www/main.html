@@ -2,180 +2,180 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="msapplication-tap-highlight" content="no">
-    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *">
 
-    <title>Coupon</title>
-    <link rel="stylesheet" href="css/framework7.material.min.css">
-    <link rel="stylesheet" href="css/framework7.material.colors.min.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+  <title>Coupon</title>
+  <link rel="stylesheet" href="css/framework7.material.min.css">
+  <link rel="stylesheet" href="css/framework7.material.colors.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body class="theme-lightblue">
-    <!-- <div class="statusbar-overlay" ></div> -->
-    <div class="views">
-        <div class="view view-main">
-            <div class="pages">
-            </div>
-            <div class="toolbar toolbar-bottom home-toolbar" id="mainToolbar">
-                <div class="toolbar-inner">
-                    <a href="userHome.html" class="link active"><i class="fa fa-home"></i><span class="toolbar-text">Home</span></a>
-                    <a href="membership.html" class="link"><i class="fa fa-address-card"></i><span class="toolbar-text">Membership</span></a>
-                    <a href="merchant.html" class="link"><i class="fa fa-id-badge"></i><span class="toolbar-text">Merchant</span></a>
-                    <a href="collection.html" class="link"><i class="fa fa-folder"></i><span class="toolbar-text">Collection</span></a>
-                    <a href="more.html" class="link"><i class="fa fa-ellipsis-h"></i><span class="toolbar-text">More</span></a>
-                </div>
-            </div>
+  <!-- <div class="statusbar-overlay" ></div> -->
+  <div class="views">
+    <div class="view view-main">
+      <div class="pages">
+      </div>
+      <div class="toolbar toolbar-bottom home-toolbar" id="mainToolbar">
+        <div class="toolbar-inner">
+          <a href="userHome.html" class="link active"><i class="fa fa-home"></i><span class="toolbar-text">Home</span></a>
+          <a href="membership.html" class="link"><i class="fa fa-address-card"></i><span class="toolbar-text">Membership</span></a>
+          <a href="merchant.html" class="link"><i class="fa fa-id-badge"></i><span class="toolbar-text">Merchant</span></a>
+          <a href="collection.html" class="link"><i class="fa fa-folder"></i><span class="toolbar-text">Collection</span></a>
+          <a href="more.html" class="link"><i class="fa fa-ellipsis-h"></i><span class="toolbar-text">More</span></a>
         </div>
+      </div>
     </div>
-    <div class="login-screen">
-        <div class="view">
-            <div class="page">
-                <div class="page-content login-screen-content">
-                    <div style="height:2%"></div>
-                    <div align="center">
-                        <div class="login-screen-title"><img src="img/logo.png" class="img-rounded" id="logo"></div>
-                    </div>
-                    <form>
-                        <div class="list-block">
-                            <ul>
-                                <li class="item-content">
-                                    <div class="item-inner">
-                                        <div class="item-input">
-                                            <i class="fa fa-user"></i><input type="text" name="loginUsername" placeholder="Username">
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="item-content">
-                                    <div class="item-inner">
-                                        <div class="item-input">
-                                            <input type="password" name="loginPassword" id="loginPassword" placeholder="Password">
-                                        </div>
-                                        <i class="fa fa-eye" id="viewLoginPw"></i>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="list-block">
-                            <ul>
-                                <li class="item-content">
-                                    <div class="item-inner">
-                                        <a href="#" class="button btn-login" id="btnToLogin"><i class="fa fa-sign-in"></i>  Log In</a>
-                                    </div>
-                                </li>
-                                <li class="item-content">
-                                    <div class="item-inner">
-                                        <a href="#" class="item-link" id="btnToForgetPw">Forgot Your Password?</a>
-                                    </div>
-                                </li>
-                                <li class="item-content">
-                                    <div class="item-inner">
-                                        <a href="#" class="button facebook-login" id="btnFbLogin"><i class="fa fa-facebook-official"></i> Login with Facebook</a>
-                                        <a href="#" class="button facebook-logout" id="btnFbLogout"> Logout</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </form>
-                    <div class="bottom-bar list-block">
-                        <ul>
-                            Don't have an account <a href="#" class="item-link btn-to-register " id="btnToRegister"> Sign Up</a>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="popup popup-register">
-        <div class="view">
-            <div class="page">
-                <div class="page-content login-screen-content">
-                    <div style="height:2%"></div>
-                    <div align="center">
-                        <div class="login-screen-title"><img src="img/logo.png" class="img-rounded" id="logo"></div>
-                    </div>
-                    <form>
-                        <div class="list-block">
-                            <ul>
-                                <li class="item-content">
-                                    <div class="item-inner">
-
-                                        <div class="item-input">
-                                            <input type="text" id="regEmail" placeholder="Email">
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="item-content">
-                                    <div class="item-inner">
-
-                                        <div class="item-input">
-                                            <input type="text" name="name" id="regUsername" placeholder="Username">
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="item-content">
-                                    <div class="item-inner">
-
-                                        <div class="item-input">
-                                            <input type="password" name="password" id="regPassword" placeholder="Password">
-                                        </div>
-                                        <i class="fa fa-eye" id="viewPw"></i>
-                                    </div>
-                                </li>
-                                <li class="item-content">
-                                    <div class="item-inner">
-
-                                        <div class="item-input">
-                                            <input type="text" id="regDob" placeholder="dob" />
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="list-block">
-                            <ul>
-                                <li class="item-content">
-                                    <div class="item-inner">
-                                        <a href="#" class="button button-fill" id="btnRegSubmit"><i class="fa fa-sign-in"></i>  Sign Up</a>
-                                    </div>
-                                </li>
-                                <li class="item-content">
-                                    <div class="item-inner">
-                                        <a href="#" class="button facebook-login" id="btnFbLoginR"><i class="fa fa-facebook-official"></i> Login with Facebook</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </form>
-                    <div class="bottom-bar list-block">
-                        <ul>
-                            Already have an account?<a href="#" class="item-link btn-to-loginpage " id="btnToLoginPage"> Sign In</a>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="popover popover-update-profile">
-        <div class="popover-inner">
+  </div>
+  <div class="login-screen">
+    <div class="view">
+      <div class="page">
+        <div class="page-content login-screen-content">
+          <div style="height:2%"></div>
+          <div align="center">
+            <div class="login-screen-title"><img src="img/logo.png" class="img-rounded" id="logo"></div>
+          </div>
+          <form>
             <div class="list-block">
-                <ul>
-                    <li>
-                        <p align="center">Update Profile Picture</p>
-                    </li>
-                    <li><a href="#" class="list-button item-link" id = "cameraGetPicture">Browse Photo Library</a></li>
-                    <li><a href="#" class="list-button item-link" id = "cameraTakePicture">Camera</a></li>
-                </ul>
+              <ul>
+                <li class="item-content">
+                  <div class="item-inner">
+                    <div class="item-input">
+                      <i class="fa fa-user"></i><input type="text" name="loginUsername" placeholder="Username">
+                    </div>
+                  </div>
+                </li>
+                <li class="item-content">
+                  <div class="item-inner">
+                    <div class="item-input">
+                      <input type="password" name="loginPassword" id="loginPassword" placeholder="Password">
+                    </div>
+                    <i class="fa fa-eye" id="viewLoginPw"></i>
+                  </div>
+                </li>
+              </ul>
             </div>
+            <div class="list-block">
+              <ul>
+                <li class="item-content">
+                  <div class="item-inner">
+                    <a href="#" class="button btn-login" id="btnToLogin"><i class="fa fa-sign-in"></i>  Log In</a>
+                  </div>
+                </li>
+                <li class="item-content">
+                  <div class="item-inner">
+                    <a href="#" class="item-link" id="btnToForgetPw">Forgot Your Password?</a>
+                  </div>
+                </li>
+                <li class="item-content">
+                  <div class="item-inner">
+                    <a href="#" class="button facebook-login" id="btnFbLogin"><i class="fa fa-facebook-official"></i> Login with Facebook</a>
+                    <a href="#" class="button facebook-logout" id="btnFbLogout"> Logout</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </form>
+          <div class="bottom-bar list-block">
+            <ul>
+              Don't have an account <a href="#" class="item-link btn-to-register " id="btnToRegister"> Sign Up</a>
+            </ul>
+          </div>
         </div>
+      </div>
     </div>
-    <!-- <div class="popover popover-upload-photo">
+  </div>
+  <div class="popup popup-register">
+    <div class="view">
+      <div class="page">
+        <div class="page-content login-screen-content">
+          <div style="height:2%"></div>
+          <div align="center">
+            <div class="login-screen-title"><img src="img/logo.png" class="img-rounded" id="logo"></div>
+          </div>
+          <form>
+            <div class="list-block">
+              <ul>
+                <li class="item-content">
+                  <div class="item-inner">
+
+                    <div class="item-input">
+                      <input type="text" id="regEmail" placeholder="Email">
+                    </div>
+                  </div>
+                </li>
+                <li class="item-content">
+                  <div class="item-inner">
+
+                    <div class="item-input">
+                      <input type="text" name="name" id="regUsername" placeholder="Username">
+                    </div>
+                  </div>
+                </li>
+                <li class="item-content">
+                  <div class="item-inner">
+
+                    <div class="item-input">
+                      <input type="password" name="password" id="regPassword" placeholder="Password">
+                    </div>
+                    <i class="fa fa-eye" id="viewPw"></i>
+                  </div>
+                </li>
+                <li class="item-content">
+                  <div class="item-inner">
+
+                    <div class="item-input">
+                      <input type="text" id="regDob" placeholder="dob" />
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="list-block">
+              <ul>
+                <li class="item-content">
+                  <div class="item-inner">
+                    <a href="#" class="button button-fill" id="btnRegSubmit"><i class="fa fa-sign-in"></i>  Sign Up</a>
+                  </div>
+                </li>
+                <li class="item-content">
+                  <div class="item-inner">
+                    <a href="#" class="button facebook-login" id="btnFbLoginR"><i class="fa fa-facebook-official"></i> Login with Facebook</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </form>
+          <div class="bottom-bar list-block">
+            <ul>
+              Already have an account?<a href="#" class="item-link btn-to-loginpage " id="btnToLoginPage"> Sign In</a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="popover popover-update-profile">
+    <div class="popover-inner">
+      <div class="list-block">
+        <ul>
+          <li>
+            <p align="center">Update Profile Picture</p>
+          </li>
+          <li><a href="#" class="list-button item-link" id="cameraGetPicture">Browse Photo Library</a></li>
+          <li><a href="#" class="list-button item-link" id="cameraTakePicture">Camera</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="popover popover-upload-photo">
         <div class="popover-inner">
             <div class="list-block">
                 <ul>
@@ -188,231 +188,241 @@
             </div>
         </div>
     </div> -->
-    <div class="popup popup-voucher-detail">
-        <div class="navbar">
-            <div class="navbar-inner">
-                <div class="center sliding"></div>
-                <div class="right">
-                    <a href="#" class="close-popup link">
+  <div class="popup popup-voucher-detail">
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="center sliding"></div>
+        <div class="right">
+          <a href="#" class="close-popup link">
                         <i class="fa fa-close"></i>
                         <span>close</span>
                     </a>
-                </div>
-            </div>
         </div>
-        <div class="content-block">
+      </div>
+    </div>
+    <div class="content-block">
 
-            <i class="fa fa-heart" data-value="" id="test"></i>
-            <a href="#" data-popover=".popover-share" class="open-popover">
+      <i class="fa fa-heart" data-value="" id="test"></i>
+      <a href="#" data-popover=".popover-share" class="open-popover">
                 <i class="fa fa-share-square-o" id="share"></i>
             </a>
 
-            <img/ style="margin-bottom:20px;">
-                <table>
-                    <tr>
-                        <td class="description" align="center"></td>
-                    </tr>
-                    <tr>
-                        <td class="detail"></td>
-                    </tr>
-                    <tr>
-                        <td id="vCondition" align="center"><b>TERMS & CONDITIONS</b></td>
-                    </tr>
-                    <tr>
-                        <td class="condition"></td>
-                    </tr>
-                    <tr>
-                        <td id="vGallery" align="center"><b>GALLERY</b></td>
-                    </tr>
-                </table>
-                <div class="row" id="cate">
-                    <div class="col-50">
-                        <img/ class="cate-image">
-                    </div>
-                    <div class="col-50">
-                        <img/ class="cate-image" id="two">
-                    </div>
-                    <div class="col-50">
-                        <img/ class="cate-image" id="three">
-                    </div>
-                    <div class="col-50">
-                        <img/ class="cate-image" id="four">
-                    </div>
-                </div>
-        </div>
-        <div class="item-inner">
-            <a href="#" class="button pay" id="btnPay"><i class="fa fa-money"></i> Pay Now</a>
+      <img/ style="margin-bottom:20px;">
+        <table>
+          <tr>
+            <td class="description" align="center"></td>
+          </tr>
+          <tr>
+            <td class="detail"></td>
+          </tr>
+          <tr>
+            <td id="vCondition" align="center"><b>TERMS & CONDITIONS</b></td>
+          </tr>
+          <tr>
+            <td class="condition"></td>
+          </tr>
+          <tr>
+            <td id="vGallery" align="center"><b>GALLERY</b></td>
+          </tr>
+        </table>
+        <div class="row" id="cate">
+          <div class="col-50">
+            <img/ class="cate-image">
+          </div>
+          <div class="col-50">
+            <img/ class="cate-image" id="two">
+          </div>
+          <div class="col-50">
+            <img/ class="cate-image" id="three">
+          </div>
+          <div class="col-50">
+            <img/ class="cate-image" id="four">
+          </div>
         </div>
     </div>
+    <div class="item-inner">
+      <a href="#" class="button pay" id="btnPay"><i class="fa fa-money"></i> Pay Now</a>
     </div>
+  </div>
+  </div>
 
-    <div class="popup popup-recent-added">
-        <div class="navbar">
-            <div class="navbar-inner">
-                <div class="center sliding"></div>
-                <div class="right">
-                    <a href="#" class="close-popup link">
+  <div class="popup popup-recent-added">
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="center sliding"></div>
+        <div class="right">
+          <a href="#" class="close-popup link">
                         <i class="fa fa-close"></i>
                         <span>close</span>
                     </a>
-                </div>
-            </div>
         </div>
-        <p class="name"></p>
-        <div class="content-block">
-            <img/ width="325" height="250" style="margin-bottom:20px;">
-                <table>
-                    <tr>
-                        <td id="rDescription">Description: </td>
-                        <td class="description"></td>
-                    </tr>
-                </table>
-        </div>
+      </div>
     </div>
-    <div class="popup popup-membership">
-        <div class="navbar">
-            <div class="navbar-inner">
-                <div class="center sliding"></div>
-                <div class="right">
-                    <a href="#" class="close-popup link">
+    <p class="name"></p>
+    <div class="content-block">
+      <img/ width="325" height="250" style="margin-bottom:20px;">
+        <table>
+          <tr>
+            <td id="rDescription">Description: </td>
+            <td class="description"></td>
+          </tr>
+        </table>
+    </div>
+  </div>
+  <div class="popup popup-membership">
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="center sliding"></div>
+        <div class="right">
+          <a href="#" class="close-popup link">
                         <i class="fa fa-close"></i>
                         <span>close</span>
                     </a>
-                </div>
-            </div>
         </div>
-        <p class="name"></p>
-        <div class="content-block">
-            <img/ width="150" height="100" style="margin-bottom:20px;">
-                <table>
-                    <tr>
-                        <td class="descriptionMembership"></td>
-                    </tr>
-                    <tr>
-                        <td id="condition" align="center" style="padding-top: 20px;"><b>TERMS & CONDITIONS</b></td>
-                    </tr>
-                    <tr>
-                        <td class="term"></td>
-                    </tr>
-                    <tr>
-                        <td id="outlet" align="center" style="padding-top: 20px;"><b>Outlets</b></td>
-                    </tr>
-                    <tr>
-                        <td class="outlet"></td>
-                    </tr>
-                </table>
-                <div class="item-inner" align="center" style="padding-top: 20px;">
-                    <a href="#" class="button button-fill Join" id="btnJoin" style="width: 50%;"><i class="fa fa-plus"></i> Join Member</a>
-                </div>
+      </div>
+    </div>
+    <p class="name"></p>
+    <div class="content-block">
+      <img/ width="150" height="100" style="margin-bottom:20px;">
+        <table>
+          <tr>
+            <td class="descriptionMembership"></td>
+          </tr>
+          <tr>
+            <td id="condition" align="center" style="padding-top: 20px;"><b>TERMS & CONDITIONS</b></td>
+          </tr>
+          <tr>
+            <td class="term"></td>
+          </tr>
+          <tr>
+            <td id="outlet" align="center" style="padding-top: 20px;"><b>Outlets</b></td>
+          </tr>
+          <tr>
+            <td class="outlet"></td>
+          </tr>
+        </table>
+        <div class="item-inner" align="center" style="padding-top: 20px;">
+          <a href="#" class="button button-fill Join" id="btnJoin" style="width: 50%;"><i class="fa fa-plus"></i> Join Member</a>
         </div>
     </div>
-    <div class="popup popup-merchant-detail">
-        <div class="navbar">
-            <div class="navbar-inner">
-                <div class="center sliding"></div>
-                <div class="right">
-                    <a href="#" class="close-popup link">
+  </div>
+  <div class="popup popup-merchant-detail">
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="center sliding"></div>
+        <div class="right">
+          <a href="#" class="close-popup link">
                         <i class="fa fa-close"></i>
                         <span>close</span>
                     </a>
-                </div>
-            </div>
         </div>
-        <div class="content-block">
-            <img/ style="margin-bottom:20px;width:100%; height:150px">
-                <table>
-                    <tr>
-                        <td class="descriptionM"></td>
-                    </tr>
-                    <tr>
-                        <td id="location" style="font-weight: bold;padding-top: 10px;"><i class="fa fa-map-marker"></i> Location: </td>
-                    </tr>
-                    <tr>
-                        <td class="location" style="font-weight: bold;"></td>
-                    </tr>
-                </table>
-        </div>
+      </div>
     </div>
+    <div class="content-block">
+      <img/ style="margin-bottom:20px;width:100%; height:150px">
+        <table>
+          <tr>
+            <td class="descriptionM"></td>
+          </tr>
+          <tr>
+            <td id="location" style="font-weight: bold;padding-top: 10px;"><i class="fa fa-map-marker"></i> Location: </td>
+          </tr>
+          <tr>
+            <td class="location" style="font-weight: bold;"></td>
+          </tr>
+        </table>
+    </div>
+  </div>
 
-    <div class="popup popup-recent-added-category-detail">
-        <div class="navbar">
-            <div class="navbar-inner">
-                <div class="center sliding"></div>
-                <div class="right">
-                    <a href="#" class="close-popup link">
+  <div class="popup popup-recent-added-category-detail">
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="center sliding"></div>
+        <div class="right">
+          <a href="#" class="close-popup link">
                         <i class="fa fa-close"></i>
                         <span>close</span>
                     </a>
-                </div>
-            </div>
         </div>
-        <div class="content-block">
-            <img/ style="margin-bottom:20px;width: 200px;height: 100px;">
-                <table>
-                    <tr>
-                        <td class="title"></td>
-                    </tr>
-                    <tr>
-                        <td class="description" align="center"></td>
-                    </tr>
-                    <tr>
-                        <td class="detail"></td>
-                    </tr>
-                </table>
-                <img/ id="two" style="margin-bottom:20px;width: 200px;height: 100px;">
-                    <table>
-                        <tr>
-                            <td class="title1"></td>
-                        </tr>
-                        <tr>
-                            <td class="description1" align="center"></td>
-                        </tr>
-                    </table>
-        </div>
+      </div>
     </div>
-
-    <div class="popover popover-share">
-        <div class="popover-inner">
-            <div class="list-block">
-                <ul>
-                    <li style="padding-left: 15px;"><b>Share via</b></li>
-                    <li><a href="#" class="list-button item-link"><i class="fa fa-twitter" style="color: #00aced;"></i>  Twitter</a></li>
-                    <li><a href="#" class="list-button item-link"><i class="fa fa-facebook" style="color: #3b5998;"></i>  Facebook</a></li>
-                    <li><a href="#" class="list-button item-link"><i class="fa fa-wechat" style="color: #09b83e;"></i>  WeChat</a></li>
-                    <li><a href="#" class="list-button item-link"><i class="fa fa-whatsapp" style="color: #43d854;"></i>  WhatsApp</a></li>
-                </ul>
-            </div>
-        </div>
+    <div class="content-block">
+      <img/ style="margin-bottom:20px;width: 200px;height: 100px;">
+        <table>
+          <tr>
+            <td class="title"></td>
+          </tr>
+          <tr>
+            <td class="description" align="center"></td>
+          </tr>
+          <tr>
+            <td class="detail"></td>
+          </tr>
+        </table>
+        <img/ id="two" style="margin-bottom:20px;width: 200px;height: 100px;">
+          <table>
+            <tr>
+              <td class="title1"></td>
+            </tr>
+            <tr>
+              <td class="description1" align="center"></td>
+            </tr>
+          </table>
     </div>
+  </div>
 
-    <div class="popover popover-notification">
-        <div class="popover-inner">
-            <div class="list-block">
-                <p align="center"><b>Notification</b></p>
-                <ul id="popover-notification">
-                    <li>
-                        <p>new promotion for .......</p>
-                    </li>
-                    <li>
-                        <p>123324</p>
-                    </li>
-                </ul>
-            </div>
-        </div>
+  <div class="popover popover-share">
+    <div class="popover-inner">
+      <div class="list-block">
+        <ul>
+          <li style="padding-left: 15px;"><b>Share via</b></li>
+          <li><a href="#" class="list-button item-link"><i class="fa fa-twitter" style="color: #00aced;"></i>  Twitter</a></li>
+          <li><a href="#" class="list-button item-link"><i class="fa fa-facebook" style="color: #3b5998;"></i>  Facebook</a></li>
+          <li><a href="#" class="list-button item-link"><i class="fa fa-wechat" style="color: #09b83e;"></i>  WeChat</a></li>
+          <li><a href="#" class="list-button item-link"><i class="fa fa-whatsapp" style="color: #43d854;"></i>  WhatsApp</a></li>
+        </ul>
+      </div>
     </div>
+  </div>
 
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/paypal-mobile-js-helper.js"></script>
-    <script type="text/javascript" src="js/framework7.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js" />
-    <script type="text/javascript" src="js/toast.js"></script>
-    <script type="text/javascript" src="js/helper.js"></script>
-    <script type="text/javascript" src="js/data.js"></script>
-    <script type="text/javascript" src="js/localforage.min.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
-    <script type="text/javascript" src="js/auth.js"></script>
-    <script type="text/javascript" src="js/function.js"></script>
-    <script type="text/javascript" src="js/start.js"></script>
+  <div class="popover popover-notification">
+    <div class="popover-inner">
+      <div class="list-block">
+        <p align="center"><b>Notification</b></p>
+        <ul id="popover-notification">
+          <li>
+            <p>new promotion for .......</p>
+          </li>
+          <li>
+            <p>123324</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    var socket = io('http://localhost');
+    socket.on('news', function(data) {
+      console.log(data);
+      socket.emit('my other event', {
+        my: 'data'
+      });
+    });
+  </script>
+  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript" src="js/paypal-mobile-js-helper.js"></script>
+  <script type="text/javascript" src="js/framework7.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js" />
+  <script type="text/javascript" src="js/toast.js"></script>
+  <script type="text/javascript" src="js/helper.js"></script>
+  <script type="text/javascript" src="js/data.js"></script>
+  <script type="text/javascript" src="js/localforage.min.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script type="text/javascript" src="js/auth.js"></script>
+  <script type="text/javascript" src="js/function.js"></script>
+  <script type="text/javascript" src="js/start.js"></script>
 </body>
 
 </html>
