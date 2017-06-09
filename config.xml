@@ -1,99 +1,100 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.coupon.app" version="1.0.0" versionCode="10" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:gap="http://phonegap.com/ns/1.0">
-    <gap:config-file parent="/manifest" platform="android">
-        <application android:debuggable="true" />
-    </gap:config-file>
-    <name>Coupon</name>
-    <description>
-        Save Save Save!!!
-    </description>
-    <author email="szehui_teo0725@hotmail.com" href="https://www.avtns.com">
-        Advance Technology Network Solution (M) Sdn. Bhd.
-    </author>
-    <access origin="*" />
-    <content src="index.html" />
-    <preference name="orientation" value="portrait" />
-    <preference name="fullscreen" value="false" />
-    <preference name="target-device" value="handset" />
-    <preference name="prerendered-icon" value="false" />
-    <preference name="detect-data-types" value="true" />
-    <preference name="exit-on-suspend" value="false" />
-    <preference name="deployment-target" value="7.0" />
-    <preference name="android-build-tool" value="gradle" />
-    <preference name="android-windowSoftInputMode" value="stateHidden|adjustResize" />
-    <preference name="android-minSdkVersion" value="19" />
-    <preference name="android-installLocation" value="auto" />
-    <plugin name="cordova-plugin-splashscreen" />
-    <plugin name="cordova-plugin-device" />
-    <plugin name="cordova-plugin-whitelist" />
-    <plugin name="cordova-plugin-camera" />
-    <plugin name="cordova-plugin-inappbrowser" source="npm" />
-    <plugin name="cordova-plugin-x-socialsharing" source="npm" />
-    <platform name="android">
-        <icon platform="android" qualifier="ldpi" src="ldpi.png" />
-        <icon platform="android" qualifier="mdpi" src="mdpi.png" />
-        <icon platform="android" qualifier="hdpi" src="hdpi.png" />
-        <icon platform="android" qualifier="xhdpi" src="xhdpi.png" />
-        <icon platform="android" qualifier="xxhdpi" src="xxhdpi.png" />
-        <icon platform="android" qualifier="fr-xxhdpi" src="fr-xxhdpi.png" />
-        <splash platform="android" qualifier="ldpi" src="ldpi.png" />
-        <splash platform="android" qualifier="mdpi" src="mdpi.png" />
-        <splash platform="android" qualifier="hdpi" src="hdpi.png" />
-        <splash platform="android" qualifier="xhdpi" src="xhdpi.png" />
-        <splash platform="android" qualifier="fr-xhdpi" src="fr-xhdpi.png" />
-        <splash platform="android" qualifier="port-xxhdpi" src="portrait-xxhdpi.png" />
-        <splash platform="android" qualifier="land-xxhdpi" src="landscape-xxhdpi.png" />
-    </platform>
-    <platform name="ios">
-        <icon height="180" platform="ios" src="icon-60@3x.png" width="180" />
-        <icon height="60" platform="ios" src="icon-60.png" width="60" />
-        <icon height="120" platform="ios" src="icon-60@2x.png" width="120" />
-        <icon height="76" platform="ios" src="icon-76.png" width="76" />
-        <icon height="152" platform="ios" src="icon-76@2x.png" width="152" />
-        <icon height="167" platform="ios" src="icon-83.5@2x.png" width="167" />
-        <icon height="29" platform="ios" src="icon-small.png" width="29" />
-        <icon height="58" platform="ios" src="icon-small@2x.png" width="58" />
-        <icon height="87" platform="ios" src="icon-small@3x.png" width="87" />
-        <icon height="40" platform="ios" src="icon-40.png" width="40" />
-        <icon height="80" platform="ios" src="icon-40@2x.png" width="80" />
-        <icon height="120" platform="ios" src="icon-40@3x.png" width="120" />
-        <icon height="57" platform="ios" src="icon.png" width="57" />
-        <icon height="114" platform="ios" src="icon@2x.png" width="114" />
-        <icon height="72" platform="ios" src="icon-72.png" width="72" />
-        <icon height="144" platform="ios" src="icon-72@2x.png" width="144" />
-        <icon height="29" platform="ios" src="icon-small.png" width="29" />
-        <icon height="58" platform="ios" src="icon-small@2x.png" width="58" />
-        <icon height="50" platform="ios" src="icon-50.png" width="50" />
-        <icon height="100" platform="ios" src="icon-50@2x.png" width="100" />
-        <splash height="480" platform="ios" src="Default.png" width="320" />
-        <splash height="960" platform="ios" src="Default@2x.png" width="640" />
-        <splash height="1136" platform="ios" src="Default-568h@2x.png" width="640" />
-        <splash height="1334" platform="ios" src="Default-667h@2x.png" width="750" />
-        <splash height="2208" platform="ios" src="Default-Portrait-736h@3x.png" width="1242" />
-        <splash height="1242" platform="ios" src="Default-Landscape-736h@3x.png" width="2208" />
-        <splash height="1024" platform="ios" src="Default-Portrait.png" width="768" />
-        <splash height="768" platform="ios" src="Default-Landscape.png" width="1024" />
-        <splash height="2048" platform="ios" src="Default-Portrait@2x.png" width="1536" />
-        <splash height="1536" platform="ios" src="Default-Landscape@2x.png" width="2048" />
-    </platform>
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
-    <allow-intent href="tel:*" />
-    <allow-intent href="sms:*" />
-    <allow-intent href="mailto:*" />
-    <allow-intent href="geo:*" />
-    <allow-intent href="whatsapp:*" />
-    <platform name="android">
-        <allow-intent href="market:*" />
-    </platform>
-    <platform name="ios">
-        <allow-intent href="itms:*" />
-        <allow-intent href="itms-apps:*" />
-    </platform>
-    <plugin name="cordova-plugin-facebook4">
-        <variable name="APP_ID" value="315064148931121" />
-        <variable name="APP_NAME" value="coupons" />
-    </plugin>
-    <plugin name="molpay-mobile-xdk-cordova" />
-    <plugin name="com.paypal.cordova.mobilesdk"/>
+  <gap:config-file parent="/manifest" platform="android">
+    <application android:debuggable="true"/>
+  </gap:config-file>
+  <name>Coupon</name>
+  <description>
+    Save Save Save!!!
+  </description>
+  <author email="szehui_teo0725@hotmail.com" href="https://www.avtns.com">
+    Advance Technology Network Solution (M) Sdn. Bhd.
+  </author>
+  <access origin="*"/>
+  <content src="index.html"/>
+  <preference name="orientation" value="portrait"/>
+  <preference name="fullscreen" value="false"/>
+  <preference name="target-device" value="handset"/>
+  <preference name="prerendered-icon" value="false"/>
+  <preference name="detect-data-types" value="true"/>
+  <preference name="exit-on-suspend" value="false"/>
+  <preference name="deployment-target" value="7.0"/>
+  <preference name="android-build-tool" value="gradle"/>
+  <preference name="android-windowSoftInputMode" value="stateHidden|adjustResize"/>
+  <preference name="android-minSdkVersion" value="19"/>
+  <preference name="android-installLocation" value="auto"/>
+  <plugin name="cordova-plugin-splashscreen"/>
+  <plugin name="cordova-plugin-device"/>
+  <plugin name="cordova-plugin-whitelist"/>
+  <plugin name="cordova-plugin-camera"/>
+  <plugin name="cordova-plugin-inappbrowser" source="npm"/>
+  <plugin name="cordova-plugin-x-socialsharing" source="npm"/>
+  <plugin name="cordova-plugin-barcodescanner" source="npm" />
+  <platform name="android">
+    <icon platform="android" qualifier="ldpi" src="ldpi.png"/>
+    <icon platform="android" qualifier="mdpi" src="mdpi.png"/>
+    <icon platform="android" qualifier="hdpi" src="hdpi.png"/>
+    <icon platform="android" qualifier="xhdpi" src="xhdpi.png"/>
+    <icon platform="android" qualifier="xxhdpi" src="xxhdpi.png"/>
+    <icon platform="android" qualifier="fr-xxhdpi" src="fr-xxhdpi.png"/>
+    <splash platform="android" qualifier="ldpi" src="ldpi.png"/>
+    <splash platform="android" qualifier="mdpi" src="mdpi.png"/>
+    <splash platform="android" qualifier="hdpi" src="hdpi.png"/>
+    <splash platform="android" qualifier="xhdpi" src="xhdpi.png"/>
+    <splash platform="android" qualifier="fr-xhdpi" src="fr-xhdpi.png"/>
+    <splash platform="android" qualifier="port-xxhdpi" src="portrait-xxhdpi.png"/>
+    <splash platform="android" qualifier="land-xxhdpi" src="landscape-xxhdpi.png"/>
+  </platform>
+  <platform name="ios">
+    <icon height="180" platform="ios" src="icon-60@3x.png" width="180"/>
+    <icon height="60" platform="ios" src="icon-60.png" width="60"/>
+    <icon height="120" platform="ios" src="icon-60@2x.png" width="120"/>
+    <icon height="76" platform="ios" src="icon-76.png" width="76"/>
+    <icon height="152" platform="ios" src="icon-76@2x.png" width="152"/>
+    <icon height="167" platform="ios" src="icon-83.5@2x.png" width="167"/>
+    <icon height="29" platform="ios" src="icon-small.png" width="29"/>
+    <icon height="58" platform="ios" src="icon-small@2x.png" width="58"/>
+    <icon height="87" platform="ios" src="icon-small@3x.png" width="87"/>
+    <icon height="40" platform="ios" src="icon-40.png" width="40"/>
+    <icon height="80" platform="ios" src="icon-40@2x.png" width="80"/>
+    <icon height="120" platform="ios" src="icon-40@3x.png" width="120"/>
+    <icon height="57" platform="ios" src="icon.png" width="57"/>
+    <icon height="114" platform="ios" src="icon@2x.png" width="114"/>
+    <icon height="72" platform="ios" src="icon-72.png" width="72"/>
+    <icon height="144" platform="ios" src="icon-72@2x.png" width="144"/>
+    <icon height="29" platform="ios" src="icon-small.png" width="29"/>
+    <icon height="58" platform="ios" src="icon-small@2x.png" width="58"/>
+    <icon height="50" platform="ios" src="icon-50.png" width="50"/>
+    <icon height="100" platform="ios" src="icon-50@2x.png" width="100"/>
+    <splash height="480" platform="ios" src="Default.png" width="320"/>
+    <splash height="960" platform="ios" src="Default@2x.png" width="640"/>
+    <splash height="1136" platform="ios" src="Default-568h@2x.png" width="640"/>
+    <splash height="1334" platform="ios" src="Default-667h@2x.png" width="750"/>
+    <splash height="2208" platform="ios" src="Default-Portrait-736h@3x.png" width="1242"/>
+    <splash height="1242" platform="ios" src="Default-Landscape-736h@3x.png" width="2208"/>
+    <splash height="1024" platform="ios" src="Default-Portrait.png" width="768"/>
+    <splash height="768" platform="ios" src="Default-Landscape.png" width="1024"/>
+    <splash height="2048" platform="ios" src="Default-Portrait@2x.png" width="1536"/>
+    <splash height="1536" platform="ios" src="Default-Landscape@2x.png" width="2048"/>
+  </platform>
+  <allow-intent href="http://*/*"/>
+  <allow-intent href="https://*/*"/>
+  <allow-intent href="tel:*"/>
+  <allow-intent href="sms:*"/>
+  <allow-intent href="mailto:*"/>
+  <allow-intent href="geo:*"/>
+  <allow-intent href="whatsapp:*"/>
+  <platform name="android">
+    <allow-intent href="market:*"/>
+  </platform>
+  <platform name="ios">
+    <allow-intent href="itms:*"/>
+    <allow-intent href="itms-apps:*"/>
+  </platform>
+  <plugin name="cordova-plugin-facebook4">
+    <variable name="APP_ID" value="315064148931121"/>
+    <variable name="APP_NAME" value="coupons"/>
+  </plugin>
+  <plugin name="molpay-mobile-xdk-cordova"/>
+  <plugin name="com.paypal.cordova.mobilesdk"/>
 </widget>

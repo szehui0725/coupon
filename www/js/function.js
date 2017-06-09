@@ -48,6 +48,8 @@ $$(document).on('pageInit', function(e) {
   }
 });
 
+
+
 function showPreloader(msg) {
   app.showPreloader(msg);
 }
@@ -202,6 +204,8 @@ function alt_request(type, url, dataObj, callback) {
   }
 }
 
+
+
 function uploadFile(uploadUrl, fileUrl) {
   showPreloader("upload_prepare");
   var uri = encodeURI(uploadUrl);
@@ -248,6 +252,30 @@ function uploadSuccess(res) {
 function uploadFail(error) {
   alertMsg(-1, 'upload_module_fail');
 }
+
+// $$('#cameraTakePicture').on('click', function() {
+//     console.log('1');
+//     app.closeModal('.popover-update-profile');
+//     cameraTakePicture();
+// });
+//
+// $$('#captureEditable').on('click', function() {
+//     console.log('2');
+//     app.closeModal('.popover-change-pic');
+//     capturePhotoEdit();
+// });
+//
+// $$('#fromLibrary').on('click', function() {
+//     console.log('3');
+//     app.closeModal('.popover-change-pic');
+//     getPhoto(Camera.PictureSourceType.PHOTOLIBRARY);
+// });
+//
+// $$('#fromAlbum').on('click', function() {
+//     console.log('4');
+//     app.closeModal('.popover-change-pic');
+//     getPhoto(Camera.PictureSourceType.SAVEDPHOTOALBUM);
+// });
 
 var pictureSource; // picture source
 
@@ -514,15 +542,52 @@ $$('.home-toolbar a').on('click', function(e, i) {
 
 function qrcodeAction() {
   $$('#qrCode').on('click', function() {
+    // window.plugins.barcodeScanner.scan(
+    //      function (result) {
+    //          alert("We got a barcode\n" +
+    //                "Result: " + result.text + "\n" +
+    //                "Format: " + result.format + "\n" +
+    //                "Cancelled: " + result.cancelled);
+    //      },
+    //      function (error) {
+    //          alert("Scanning failed: " + error);
+    //      },
+    //      {
+    //          preferFrontCamera : true, // iOS and Android
+    //          showFlipCameraButton : true, // iOS and Android
+    //          showTorchButton : true, // iOS and Android
+    //          torchOn: true, // Android, launch with the torch switched on (if available)
+    //          prompt : "Place a barcode inside the scan area", // Android
+    //          resultDisplayDuration: 500, // Android, display scanned text for X ms. 0 suppresses it entirely, default 1500
+    //          formats : "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
+    //          orientation : "landscape", // Android only (portrait|landscape), default unset so it rotates with the device
+    //          disableAnimations : true, // iOS
+    //          disableSuccessBeep: false // iOS
+    //      }
+    //   );
     cordova.plugins.barcodeScanner.scan(
       function(result) {
-        alert("A barcode has been scanned \n" +
-          "Result: " + result.text + "\n" +
-          "Format: " + result.format + "\n" +
-          "Cancelled: " + result.cancelled);
+        if (!result.cancelled) {
+          // In this case we only want to process QR Codes
+          if (result.format == "QR_CODE") {
+            var value = result.text;
+            // This is the retrieved content of the qr code
+            alert(value);
+          } else {
+            alert("Sorry, only qr codes this time ;)");
+          }
+        } else {
+          alert("The user has dismissed the scan");
+        }
       },
       function(error) {
-        alert("Scanning failed: " + error);
+        alert("An error ocurred: " + error);
+      }, {
+        "preferFrontCamera": false, // iOS and Android
+        "showFlipCameraButton": true, // iOS and Android
+        "prompt": "Place parallel to the code", // supported on Android only
+        "formats": "all,RSS_EXPANDED,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
+        "orientation": "portrait" // Android only (portrait|landscape), default unset so it rotates with the device
       }
     );
   });
