@@ -48,8 +48,6 @@ $$(document).on('pageInit', function(e) {
   }
 });
 
-
-
 function showPreloader(msg) {
   app.showPreloader(msg);
 }
@@ -204,8 +202,6 @@ function alt_request(type, url, dataObj, callback) {
   }
 }
 
-
-
 function uploadFile(uploadUrl, fileUrl) {
   showPreloader("upload_prepare");
   var uri = encodeURI(uploadUrl);
@@ -252,30 +248,6 @@ function uploadSuccess(res) {
 function uploadFail(error) {
   alertMsg(-1, 'upload_module_fail');
 }
-
-// $$('#cameraTakePicture').on('click', function() {
-//     console.log('1');
-//     app.closeModal('.popover-update-profile');
-//     cameraTakePicture();
-// });
-//
-// $$('#captureEditable').on('click', function() {
-//     console.log('2');
-//     app.closeModal('.popover-change-pic');
-//     capturePhotoEdit();
-// });
-//
-// $$('#fromLibrary').on('click', function() {
-//     console.log('3');
-//     app.closeModal('.popover-change-pic');
-//     getPhoto(Camera.PictureSourceType.PHOTOLIBRARY);
-// });
-//
-// $$('#fromAlbum').on('click', function() {
-//     console.log('4');
-//     app.closeModal('.popover-change-pic');
-//     getPhoto(Camera.PictureSourceType.SAVEDPHOTOALBUM);
-// });
 
 var pictureSource; // picture source
 
