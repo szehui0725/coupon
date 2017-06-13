@@ -544,6 +544,16 @@ $$('.home-toolbar a').on('click', function(e, i) {
 });
 
 function chartAction() {
+  var blTicker = io.connect('https://demo-api.hitbtc.com:8081/trades/LTCBTC');
+  blTicker.on('trade', function(data) {
+    console.log('LTCBTC demo ' + JSON.stringify(data));
+  });
+  
+  var buTicker = io.connect('https://api.hitbtc.com:8081/trades/BTCUSD');
+  buTicker.on('trade', function (data) {
+    console.log('BTCUSD main ' + JSON.stringify(data));
+  });
+
   const CHART = document.getElementById("lineChart");
   // Chart.defaults.global.animation.duration = 200;
   // Chart.defaults.global.animation.onComplete = () => {
