@@ -548,17 +548,13 @@ function chartAction() {
   blTicker.on('trade', function(data) {
     console.log('LTCBTC demo ' + JSON.stringify(data));
   });
-  
-  var buTicker = io.connect('https://api.hitbtc.com:8081/trades/BTCUSD');
-  buTicker.on('trade', function (data) {
-    console.log('BTCUSD main ' + JSON.stringify(data));
-  });
+
+  // var buTicker = io.connect('https://api.hitbtc.com:8081/trades/BTCUSD');
+  // buTicker.on('trade', function (data) {
+  //   console.log('BTCUSD main ' + JSON.stringify(data));
+  // });
 
   const CHART = document.getElementById("lineChart");
-  // Chart.defaults.global.animation.duration = 200;
-  // Chart.defaults.global.animation.onComplete = () => {
-  //   console.log('finished');
-  // }
   var lineChart = new Chart(CHART, {
     type: 'line',
     data: {
@@ -583,26 +579,6 @@ function chartAction() {
         pointRadius: 1,
         pointHitRadius: 5,
         data: [50, 10, 5, 2, 20, 30, 45],
-      }, {
-        label: "My second dataset",
-        fill: true,
-        lineTension: 0,
-        backgroundColor: 'rgb(255, 130, 236)',
-        borderColor: 'rgb(255, 130, 236)',
-        borderCapStyle: 'butt',
-        borderDash: [],
-        borderDashOffset: 0.0,
-        borderJoinStyle: 'miter',
-        pointBorderColor: 'rgb(255, 130, 236)',
-        pointBackgroundColor: "#fff",
-        pointBorderWidth: 1,
-        pointHoverRadius: 5,
-        pointHoverBackgroundColor: 'rgb(255, 99, 132)',
-        pointHoverBorderColor: 'rgb(255, 99, 132)',
-        pointHoverBorderWidth: 2,
-        pointRadius: 1,
-        pointHitRadius: 5,
-        data: [10, 50, 5, 10, 50, 30, 50],
       }]
     },
     options: {
@@ -618,9 +594,11 @@ function chartAction() {
     }
   });
 
+function update(){
+}
+
   $$('#addPoint').on('click', function() {
     lineChart.data.labels.push("label");
-    // myLineChart.data.datasets[0].data[2] = 50; // Would update the first dataset's value of 'March' to be 50
     lineChart.data.datasets.forEach((dataset) => {
       dataset.data.push(20);
     });
@@ -634,11 +612,6 @@ function chartAction() {
     });
     lineChart.update();
   });
-  // $$('#addPoint').on('click', function() {
-  //     lineChart.data.datasets[0].data[7]= 0;
-  //     lineChart.data.labels[7]= "edited";
-  //     lineChart.update();
-  // });
 
   const BAR = document.getElementById("barChart");
   Chart.defaults.scale.ticks.beginAtZero = true;
