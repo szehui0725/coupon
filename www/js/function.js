@@ -553,118 +553,63 @@ function liveAction(){
   });
 
   var count = 10;
-var data = {
-  labels : ["1","2","3","4","5", "6", "7", "8", "9", "10"],
-  datasets : [
-    {
-      fillColor : "rgba(220,220,220,0.5)",
-      strokeColor : "rgba(220,220,220,1)",
-      pointColor : "rgba(220,220,220,1)",
-      pointStrokeColor : "#fff",
-      data : [65,59,90,81,56,45,30,20,3,37]
-    },
-    {
-      fillColor : "rgba(151,187,205,0.5)",
-      strokeColor : "rgba(151,187,205,1)",
-      pointColor : "rgba(151,187,205,1)",
-      pointStrokeColor : "#fff",
-      data : [28,48,40,19,96,87,66,97,92,85]
-    }
-  ]
-}
-// this is ugly, don't judge me
-var updateData = function(oldData){
-  var labels = oldData["labels"];
-  var dataSetA = oldData["datasets"][0]["data"];
-  var dataSetB = oldData["datasets"][1]["data"];
+  var data = {
+    labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+    datasets: [{
+        fillColor: "rgba(220,220,220,0.5)",
+        strokeColor: "rgba(220,220,220,1)",
+        pointColor: "rgba(220,220,220,1)",
+        pointStrokeColor: "#fff",
+        data: [65, 59, 90, 81, 56, 45, 30, 20, 3, 37]
+      }
+    ]
+  }
 
-  labels.shift();
-  count++;
-  labels.push(count.toString());
-  var newDataA = dataSetA[9] + (20 - Math.floor(Math.random() * (41)));
-  var newDataB = dataSetB[9] + (20 - Math.floor(Math.random() * (41)));
-  dataSetA.push(newDataA);
-  dataSetB.push(newDataB);
-  dataSetA.shift();
-  dataSetB.shift();    };
+  var updateData = function(oldData) {
+    var labels = oldData["labels"];
+    var dataSetA = oldData["datasets"][0]["data"];
 
-var optionsAnimation = {
-  //Boolean - If we want to override with a hard coded scale
-  scaleOverride : true,
-  //** Required if scaleOverride is true **
-  //Number - The number of steps in a hard coded scale
-  scaleSteps : 10,
-  //Number - The value jump in the hard coded scale
-  scaleStepWidth : 10,
-  //Number - The scale starting value
-  scaleStartValue : 0
-}
+    labels.shift();
+    count++;
+    labels.push(count.toString());
+    var newDataA = dataSetA[9] + (20 - Math.floor(Math.random() * (41)));
+    dataSetA.push(newDataA);
+    dataSetA.shift();
+  };
 
-// Not sure why the scaleOverride isn't working...
-var optionsNoAnimation = {
-  animation : false,
-  //Boolean - If we want to override with a hard coded scale
-  scaleOverride : true,
-  //** Required if scaleOverride is true **
-  //Number - The number of steps in a hard coded scale
-  scaleSteps : 20,
-  //Number - The value jump in the hard coded scale
-  scaleStepWidth : 10,
-  //Number - The scale starting value
-  scaleStartValue : 0
-}
+  var optionsAnimation = {
+    scaleOverride: true,
+    scaleSteps: 10,
+    scaleStepWidth: 10,
+    scaleStartValue: 0
+  }
 
-//Get the context of the canvas element we want to select
-var ctx = document.getElementById("lChart").getContext("2d");
-var optionsNoAnimation = {animation : false}
-var myNewChart = new Chart(ctx);
-myNewChart.Line(data, optionsAnimation);
 
-setInterval(function(){
-  updateData(data);
-  myNewChart.Line(data, optionsNoAnimation)
-  ;}, 2000
-);
+  var optionsNoAnimation = {
+    animation: false,
+    scaleOverride: true,
+    scaleSteps: 20,
+    scaleStepWidth: 10,
+    scaleStartValue: 0
+  }
 
-  // const CHART = document.getElementById("lChart");
-  // var lineChart = new Chart(CHART, {
-  //   type: 'line',
-  //   data: {
-  //     labels: ["January", "February", "March", "April", "May", "June", "July"],
-  //     datasets: [{
-  //       label: "My First dataset",
-  //       fill: false,
-  //       lineTension: 0.1,
-  //       // backgroundColor: 'rgb(255, 99, 132)',
-  //       borderColor: 'rgb(255, 99, 132)',
-  //       borderCapStyle: 'butt',
-  //       borderDash: [],
-  //       borderDashOffset: 0.0,
-  //       borderJoinStyle: 'miter',
-  //       pointBorderColor: 'rgb(255, 99, 132)',
-  //       pointBackgroundColor: "#fff",
-  //       pointBorderWidth: 1,
-  //       pointHoverRadius: 5,
-  //       pointHoverBackgroundColor: 'rgb(255, 99, 132)',
-  //       pointHoverBorderColor: 'rgb(255, 99, 132)',
-  //       pointHoverBorderWidth: 2,
-  //       pointRadius: 1,
-  //       pointHitRadius: 5,
-  //       data: [50, 10, 5, 2, 20, 30, 45],
-  //     }]
-  //   },
-  //   options: {
-  //     // showLines: false,
-  //     scales: {
-  //       yAxes: [{
-  //         ticks: {
-  //           // reverse:false,
-  //           beginAtZero: true
-  //         }
-  //       }]
-  //     }
-  //   }
-  // });
+  var ctx = document.getElementById("lChart").getContext("2d");
+  var optionsNoAnimation = {
+    animation: false
+  }
+  var myNewChart = new Chart(ctx, {
+    type: 'line',
+    data: data,
+    options: optionsAnimation
+  })
+  setInterval(function() {
+    updateData(data);
+    var myNewChart = new Chart(ctx, {
+      type: 'line',
+      data: data,
+      options: optionsNoAnimation
+    })
+  }, 2000);
 }
 
 function chartAction() {
