@@ -34,6 +34,9 @@ $$(document).on('pageInit', function(e) {
     case 'chart':
       chartAction();
       break;
+    case 'live':
+      liveAction();
+      break;
     case 'more':
       moreAction();
       break;
@@ -543,11 +546,54 @@ $$('.home-toolbar a').on('click', function(e, i) {
   $$(this).addClass('selected');
 });
 
-function chartAction() {
+function liveAction(){
   var blTicker = io.connect('https://demo-api.hitbtc.com:8081/trades/LTCBTC');
   blTicker.on('trade', function(data) {
     console.log('LTCBTC demo ' + JSON.stringify(data));
   });
+
+  const CHART = document.getElementById("lChart");
+  var lineChart = new Chart(CHART, {
+    type: 'line',
+    data: {
+      labels: ["January", "February", "March", "April", "May", "June", "July"],
+      datasets: [{
+        label: "My First dataset",
+        fill: false,
+        lineTension: 0.1,
+        // backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        borderCapStyle: 'butt',
+        borderDash: [],
+        borderDashOffset: 0.0,
+        borderJoinStyle: 'miter',
+        pointBorderColor: 'rgb(255, 99, 132)',
+        pointBackgroundColor: "#fff",
+        pointBorderWidth: 1,
+        pointHoverRadius: 5,
+        pointHoverBackgroundColor: 'rgb(255, 99, 132)',
+        pointHoverBorderColor: 'rgb(255, 99, 132)',
+        pointHoverBorderWidth: 2,
+        pointRadius: 1,
+        pointHitRadius: 5,
+        data: [50, 10, 5, 2, 20, 30, 45],
+      }]
+    },
+    options: {
+      // showLines: false,
+      scales: {
+        yAxes: [{
+          ticks: {
+            // reverse:false,
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+}
+
+function chartAction() {
 
   // var buTicker = io.connect('https://api.hitbtc.com:8081/trades/BTCUSD');
   // buTicker.on('trade', function (data) {
@@ -593,9 +639,6 @@ function chartAction() {
       }
     }
   });
-
-function update(){
-}
 
   $$('#addPoint').on('click', function() {
     lineChart.data.labels.push("label");
