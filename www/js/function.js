@@ -576,8 +576,8 @@ function liveAction(){
       // count++;
       data.labels.push(res.price);
       // var newDataA = dataSetA[9] + (20 - Math.floor(Math.random() * (41)));
-      data.datasets.data.push(res.amount);
-      data.datasets.shift();
+      // data.datasets.data.push(res.amount);
+      // data.datasets.shift();
     });
     //     updateData(data);
     // var myNewChart = new Chart(ctx, {
