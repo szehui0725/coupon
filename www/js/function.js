@@ -578,7 +578,7 @@ function liveAction(){
       // var newDataA = dataSetA[9] + (20 - Math.floor(Math.random() * (41)));
       // data.datasets.data.push(res.amount);
       // data.datasets.shift();
-      data.update();
+      // data.update();
     });
     //     updateData(data);
     // var myNewChart = new Chart(ctx, {
@@ -620,14 +620,14 @@ function liveAction(){
     options: optionsAnimation
   });
 
-  // setInterval(function() {
-    // updateData(data);
-    // var myNewChart = new Chart(ctx, {
-    //   type: 'line',
-    //   data: data,
-    //   options: optionsNoAnimation
-    // })
-  // }, 2000);
+  setInterval(function() {
+    updateData(data);
+    var myNewChart = new Chart(ctx, {
+      type: 'line',
+      data: data,
+      options: optionsNoAnimation
+    })
+  }, 10000);
 }
 
 function chartAction() {
