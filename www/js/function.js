@@ -548,7 +548,7 @@ $$('.home-toolbar a').on('click', function(e, i) {
 
 function liveAction(){
   //console.log('start');
-  var blTicker = io.connect('https://demo-api.hitbtc.com:8081/trades/LTCBTC');
+  var blTicker = io.connect('https://api.hitbtc.com:8081/trades/BTCUSD');
   // blTicker.on('trade', function(data) {
   //   console.log('LTCBTC demo ' + JSON.stringify(data));
   //   console.log(data.price);
