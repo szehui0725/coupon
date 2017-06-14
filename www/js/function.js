@@ -578,6 +578,7 @@ function liveAction(){
       // var newDataA = dataSetA[9] + (20 - Math.floor(Math.random() * (41)));
       // data.datasets.data.push(res.amount);
       // data.datasets.shift();
+      data.update();
     });
     //     updateData(data);
     // var myNewChart = new Chart(ctx, {
