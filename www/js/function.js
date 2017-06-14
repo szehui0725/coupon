@@ -547,10 +547,12 @@ $$('.home-toolbar a').on('click', function(e, i) {
 });
 
 function liveAction(){
+  //console.log('start');
   var blTicker = io.connect('https://demo-api.hitbtc.com:8081/trades/LTCBTC');
-  blTicker.on('trade', function(data) {
-    console.log('LTCBTC demo ' + JSON.stringify(data));
-  });
+  // blTicker.on('trade', function(data) {
+  //   console.log('LTCBTC demo ' + JSON.stringify(data));
+  //   console.log(data.price);
+  // });
 
   var count = 10;
   var data = {
@@ -565,34 +567,48 @@ function liveAction(){
     ]
   }
 
-  var updateData = function(oldData) {
-    var labels = oldData["labels"];
-    var dataSetA = oldData["datasets"][0]["data"];
-
-    labels.shift();
-    count++;
-    labels.push(count.toString());
-    var newDataA = dataSetA[9] + (20 - Math.floor(Math.random() * (41)));
-    dataSetA.push(newDataA);
-    dataSetA.shift();
-  };
-
+    blTicker.on('trade', function(res) {
+      console.log('LTCBTC demo ' + JSON.stringify(res));
+      //console.log(res.price);
+      // var labels = oldData["labels"];
+      // var dataSetA = oldData["datasets"][0]["data"];
+      data.labels.shift();
+      // count++;
+      data.labels.push(res.price);
+      // var newDataA = dataSetA[9] + (20 - Math.floor(Math.random() * (41)));
+      data.datasets.data.push(res.amount);
+      data.datasets.shift();
+    });
+    //     updateData(data);
+    // var myNewChart = new Chart(ctx, {
+    //   type: 'line',
+    //   data: data,
+    //   options: optionsNoAnimation
+    // })
+    // var labels = oldData["labels"];
+    // var dataSetA = oldData["datasets"][0]["data"];
+    // labels.shift();
+    // count++;
+    // labels.push(count.toString());
+    // var newDataA = dataSetA[9] + (20 - Math.floor(Math.random() * (41)));
+    // dataSetA.push(newDataA);
+    // dataSetA.shift();
+  //
   var optionsAnimation = {
     scaleOverride: true,
     scaleSteps: 10,
     scaleStepWidth: 10,
     scaleStartValue: 0
   }
-
-
-  var optionsNoAnimation = {
-    animation: false,
-    scaleOverride: true,
-    scaleSteps: 20,
-    scaleStepWidth: 10,
-    scaleStartValue: 0
-  }
-
+  //
+  // var optionsNoAnimation = {
+  //   animation: false,
+  //   scaleOverride: true,
+  //   scaleSteps: 20,
+  //   scaleStepWidth: 10,
+  //   scaleStartValue: 0
+  // }
+  //
   var ctx = document.getElementById("lChart").getContext("2d");
   var optionsNoAnimation = {
     animation: false
@@ -601,15 +617,16 @@ function liveAction(){
     type: 'line',
     data: data,
     options: optionsAnimation
-  })
-  setInterval(function() {
-    updateData(data);
-    var myNewChart = new Chart(ctx, {
-      type: 'line',
-      data: data,
-      options: optionsNoAnimation
-    })
-  }, 2000);
+  });
+
+  // setInterval(function() {
+    // updateData(data);
+    // var myNewChart = new Chart(ctx, {
+    //   type: 'line',
+    //   data: data,
+    //   options: optionsNoAnimation
+    // })
+  // }, 2000);
 }
 
 function chartAction() {
