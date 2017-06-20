@@ -547,87 +547,172 @@ $$('.home-toolbar a').on('click', function(e, i) {
 });
 
 function liveAction(){
-  //console.log('start');
-  var blTicker = io.connect('https://api.hitbtc.com:8081/trades/BTCUSD');
-  // blTicker.on('trade', function(data) {
-  //   console.log('LTCBTC demo ' + JSON.stringify(data));
-  //   console.log(data.price);
-  // });
+  var quote = {};
 
-  var count = 10;
-  var data = {
-    labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
-    datasets: [{
-        fillColor: "rgba(220,220,220,0.5)",
-        strokeColor: "rgba(220,220,220,1)",
-        pointColor: "rgba(220,220,220,1)",
-        pointStrokeColor: "#fff",
-        data: [65, 59, 90, 81, 56, 45, 30, 20, 3, 37]
-      }
-    ]
+  var createDom = function(pair) {
+  	var wrapper = document.getElementById("content");
+  	var div = document.createElement("div");
+  	var html = '<div class="wrapper">';
+  	html += '<h1><span id="fsym_'+ pair +'"></span> - <span id="tsym_'+ pair +'"></span>   <strong><span class="price" id="price_'+ pair +'"></span></strong></h1>';
+  	html += '<div class="label">24h Change: <span class="value" id="change_'+ pair +'"></span> (<span class="value" id="changepct_'+ pair +'"></span>)</div>';
+  	html += '<div class="label">Last Market: <span class="market" id="market_'+ pair +'"></span></div>';
+  	html += '<div class="label">Last Trade Id: <span class="value" id="tradeid_'+ pair +'"></span></div>';
+  	html += '<div class="label">Last Trade Volume: <span class="value" id="volume_'+ pair +'"></span></div>';
+  	html += '<div class="label">Last Trade VolumeTo: <span class="value" id="volumeto_'+ pair +'"></span></div>';
+  	html += '<div class="label">24h Volume: <span class="value" id="24volume_'+ pair +'"></span></div>';
+  	html += '<div class="label">24h VolumeTo: <span class="value" id="24volumeto_'+ pair +'"></span></div>';
+  	html += '<div class="source"> Source: <a href="http://www.cryptocompare.com">CryptoCompare</a></div>';
+  	html += '</div>';
+  	div.innerHTML = html;
+  	wrapper.appendChild(div);
+  };
+
+  var displayQuote = function(_quote) {
+
+  	var fsym = CCC.STATIC.CURRENCY.SYMBOL[_quote.FROMSYMBOL];
+  	var tsym = CCC.STATIC.CURRENCY.SYMBOL[_quote.TOSYMBOL];
+  	var pair = _quote.FROMSYMBOL + _quote.TOSYMBOL;
+  	console.log(_quote);
+  	console.log(pair);
+  	document.getElementById("market_" + pair).innerHTML = _quote.LASTMARKET;
+  	document.getElementById("fsym_" + pair).innerHTML = _quote.FROMSYMBOL;
+  	document.getElementById("tsym_" + pair).innerHTML = _quote.TOSYMBOL;
+  	document.getElementById("price_" + pair).innerHTML = _quote.PRICE;
+  	document.getElementById("volume_" + pair).innerHTML = CCC.convertValueToDisplay(fsym, _quote.LASTVOLUME);
+  	document.getElementById("volumeto_" + pair).innerHTML = CCC.convertValueToDisplay(tsym, _quote.LASTVOLUMETO);
+  	document.getElementById("24volume_" + pair).innerHTML = CCC.convertValueToDisplay(fsym, _quote.VOLUME24HOUR);
+  	document.getElementById("24volumeto_" + pair).innerHTML = CCC.convertValueToDisplay(tsym, _quote.VOLUME24HOURTO);
+  	document.getElementById("tradeid_" + pair).innerHTML = _quote.LASTTRADEID.toFixed(0);
+  	document.getElementById("tradeid_" + pair).innerHTML = _quote.LASTTRADEID.toFixed(0);
+  	document.getElementById("change_" + pair).innerHTML = CCC.convertValueToDisplay(tsym, _quote.CHANGE24H);
+  	document.getElementById("changepct_" + pair).innerHTML = _quote.CHANGEPCT24H.toFixed(2) + "%";
+
+  	if (quote.FLAGS === "1"){
+  		document.getElementById("price").className = "up";
+  	}
+  	else if (quote.FLAGS === "2") {
+  		document.getElementById("price").className = "down";
+  	}
+  	else if (quote.FLAGS === "4") {
+  		document.getElementById("price").className = "";
+  	}
   }
 
-    blTicker.on('trade', function(res) {
-      console.log('LTCBTC demo ' + JSON.stringify(res));
-      //console.log(res.price);
-      // var labels = oldData["labels"];
-      // var dataSetA = oldData["datasets"][0]["data"];
-      data.labels.shift();
-      // count++;
-      data.labels.push(res.price);
-      // var newDataA = dataSetA[9] + (20 - Math.floor(Math.random() * (41)));
-      // data.datasets.data.push(res.amount);
-      // data.datasets.shift();
-      updateData(data);
-    });
-    //     updateData(data);
-    // var myNewChart = new Chart(ctx, {
-    //   type: 'line',
-    //   data: data,
-    //   options: optionsNoAnimation
-    // })
-    // var labels = oldData["labels"];
-    // var dataSetA = oldData["datasets"][0]["data"];
-    // labels.shift();
-    // count++;
-    // labels.push(count.toString());
-    // var newDataA = dataSetA[9] + (20 - Math.floor(Math.random() * (41)));
-    // dataSetA.push(newDataA);
-    // dataSetA.shift();
-  //
-  var optionsAnimation = {
-    scaleOverride: true,
-    scaleSteps: 10,
-    scaleStepWidth: 10,
-    scaleStartValue: 0
+  var updateQuote = function(result) {
+
+  	var keys = Object.keys(result);
+  	var pair = result.FROMSYMBOL + result.TOSYMBOL;
+  	if (!quote.hasOwnProperty(pair)) {
+  		quote[pair] = {}
+  		createDom(pair);
+  	}
+  	for (var i = 0; i <keys.length; ++i) {
+  		quote[pair][keys[i]] = result[keys[i]];
+  	}
+  	quote[pair]["CHANGE24H"] = quote[pair]["PRICE"] - quote[pair]["OPEN24HOUR"];
+  	quote[pair]["CHANGEPCT24H"] = quote[pair]["CHANGE24H"]/quote[pair]["OPEN24HOUR"] * 100;
+  	displayQuote(quote[pair]);
   }
+
+  var socket = io.connect('https://streamer.cryptocompare.com/');
+
+  //Format: {SubscriptionId}~{ExchangeName}~{FromSymbol}~{ToSymbol}
+  //Use SubscriptionId 0 for TRADE, 2 for CURRENT and 5 for CURRENTAGG
+  //For aggregate quote updates use CCCAGG as market
+  var subscription = ['5~CCCAGG~BTC~USD','5~CCCAGG~ETH~USD'];
+
+  socket.emit('SubAdd', {subs:subscription} );
+
+  socket.on("m", function(message){
+  	var messageType = message.substring(0, message.indexOf("~"));
+  	var res = {};
+  	if (messageType === CCC.STATIC.TYPE.CURRENTAGG) {
+  		res = CCC.CURRENT.unpack(message);
+  		console.log(res);
+  		updateQuote(res);
+  	}
+  });
+
+  // //console.log('start');
+  // var blTicker = io.connect('https://api.hitbtc.com:8081/trades/BTCUSD');
+  // // blTicker.on('trade', function(data) {
+  // //   console.log('LTCBTC demo ' + JSON.stringify(data));
+  // //   console.log(data.price);
+  // // });
   //
-  // var optionsNoAnimation = {
-  //   animation: false,
+  // var count = 10;
+  // var data = {
+  //   labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+  //   datasets: [{
+  //       fillColor: "rgba(220,220,220,0.5)",
+  //       strokeColor: "rgba(220,220,220,1)",
+  //       pointColor: "rgba(220,220,220,1)",
+  //       pointStrokeColor: "#fff",
+  //       data: [65, 59, 90, 81, 56, 45, 30, 20, 3, 37]
+  //     }
+  //   ]
+  // }
+  //
+  //   blTicker.on('trade', function(res) {
+  //     console.log('LTCBTC demo ' + JSON.stringify(res));
+  //     //console.log(res.price);
+  //     // var labels = oldData["labels"];
+  //     // var dataSetA = oldData["datasets"][0]["data"];
+  //     data.labels.shift();
+  //     // count++;
+  //     data.labels.push(res.price);
+  //     // var newDataA = dataSetA[9] + (20 - Math.floor(Math.random() * (41)));
+  //     data.datasets.data.push(res.amount);
+  //     data.datasets.shift();
+  //   });
+  //   //     updateData(data);
+  //   // var myNewChart = new Chart(ctx, {
+  //   //   type: 'line',
+  //   //   data: data,
+  //   //   options: optionsNoAnimation
+  //   // })
+  //   // var labels = oldData["labels"];
+  //   // var dataSetA = oldData["datasets"][0]["data"];
+  //   // labels.shift();
+  //   // count++;
+  //   // labels.push(count.toString());
+  //   // var newDataA = dataSetA[9] + (20 - Math.floor(Math.random() * (41)));
+  //   // dataSetA.push(newDataA);
+  //   // dataSetA.shift();
+  // //
+  // var optionsAnimation = {
   //   scaleOverride: true,
-  //   scaleSteps: 20,
+  //   scaleSteps: 10,
   //   scaleStepWidth: 10,
   //   scaleStartValue: 0
   // }
+  // //
+  // // var optionsNoAnimation = {
+  // //   animation: false,
+  // //   scaleOverride: true,
+  // //   scaleSteps: 20,
+  // //   scaleStepWidth: 10,
+  // //   scaleStartValue: 0
+  // // }
+  // //
+  // var ctx = document.getElementById("lChart").getContext("2d");
+  // var optionsNoAnimation = {
+  //   animation: false
+  // }
+  // var myNewChart = new Chart(ctx, {
+  //   type: 'line',
+  //   data: data,
+  //   options: optionsAnimation
+  // });
   //
-  var ctx = document.getElementById("lChart").getContext("2d");
-  var optionsNoAnimation = {
-    animation: false
-  }
-  var myNewChart = new Chart(ctx, {
-    type: 'line',
-    data: data,
-    options: optionsAnimation
-  });
-
-  // setInterval(function() {
-  //   updateData(data);
-  //   var myNewChart = new Chart(ctx, {
-  //     type: 'line',
-  //     data: data,
-  //     options: optionsNoAnimation
-  //   })
-  // }, 10000);
+  // // setInterval(function() {
+  // //   updateData(data);
+  // //   var myNewChart = new Chart(ctx, {
+  // //     type: 'line',
+  // //     data: data,
+  // //     options: optionsNoAnimation
+  // //   })
+  // // }, 10000);
 }
 
 function chartAction() {
