@@ -660,9 +660,9 @@ function liveAction(){
       // var dataSetA = oldData["datasets"][0]["data"];
       data.labels.shift();
       // count++;
-      data.labels.push(res.price);
+      data.labels.push(res.PRICE);
       // var newDataA = dataSetA[9] + (20 - Math.floor(Math.random() * (41)));
-      data.datasets.data.push(res.amount);
+      data.datasets.data.push(res.LASTVOLUMETO);
       data.datasets.shift();
     });
     //     updateData(data);
