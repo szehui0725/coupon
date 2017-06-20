@@ -633,13 +633,6 @@ function liveAction(){
   	}
   });
 
-  // //console.log('start');
-  // var blTicker = io.connect('https://api.hitbtc.com:8081/trades/BTCUSD');
-  // // blTicker.on('trade', function(data) {
-  // //   console.log('LTCBTC demo ' + JSON.stringify(data));
-  // //   console.log(data.price);
-  // // });
-
   var count = 10;
   var data = {
     labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
@@ -654,7 +647,7 @@ function liveAction(){
   }
 
     socket.on('trade', function(res) {
-      console.log('LTCBTC demo ' + JSON.stringify(res));
+      console.log(res.LASTVOLUMETO);
       //console.log(res.price);
       // var labels = oldData["labels"];
       // var dataSetA = oldData["datasets"][0]["data"];
@@ -665,36 +658,14 @@ function liveAction(){
       data.datasets.data.push(res.LASTVOLUMETO);
       data.datasets.shift();
     });
-    //     updateData(data);
-    // var myNewChart = new Chart(ctx, {
-    //   type: 'line',
-    //   data: data,
-    //   options: optionsNoAnimation
-    // })
-    // var labels = oldData["labels"];
-    // var dataSetA = oldData["datasets"][0]["data"];
-    // labels.shift();
-    // count++;
-    // labels.push(count.toString());
-    // var newDataA = dataSetA[9] + (20 - Math.floor(Math.random() * (41)));
-    // dataSetA.push(newDataA);
-    // dataSetA.shift();
-  //
+
   var optionsAnimation = {
     scaleOverride: true,
     scaleSteps: 10,
     scaleStepWidth: 10,
     scaleStartValue: 0
   }
-  //
-  // var optionsNoAnimation = {
-  //   animation: false,
-  //   scaleOverride: true,
-  //   scaleSteps: 20,
-  //   scaleStepWidth: 10,
-  //   scaleStartValue: 0
-  // }
-  //
+
   var ctx = document.getElementById("lChart").getContext("2d");
   var optionsNoAnimation = {
     animation: false
@@ -704,15 +675,6 @@ function liveAction(){
     data: data,
     options: optionsAnimation
   });
-
-  // setInterval(function() {
-  //   updateData(data);
-  //   var myNewChart = new Chart(ctx, {
-  //     type: 'line',
-  //     data: data,
-  //     options: optionsNoAnimation
-  //   })
-  // }, 10000);
 }
 
 function chartAction() {
